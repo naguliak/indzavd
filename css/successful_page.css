@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap");
+
+/* Шрифт Figtree (+ Noto Sans для кирилиці) */
+
+/* Сторінка "Оплата пройшла успішно" */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%; /* щоб фон не "обривався", якщо екран вищий за 1024px */
+  overflow-x: hidden;
+  background: linear-gradient(126deg, #1C2A0B 0%, #669334 100%); /* як у Figma */
+}
+
+/* Сторінка — як фрейм у Figma: 1024px заввишки */
+.service-page {
+  position: relative;
+  min-height: 1024px;
+  overflow: hidden;
+  font-family: 'Figtree', 'Noto Sans', sans-serif;
+  /* На Mac браузер малює текст товщим, ніж Figma */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Картка */
+.success-card {
+  position: relative;
+  z-index: 1;
+  width: 777px;
+  max-width: 100%;
+  margin: 292px auto 0;
+  padding: 56px 46px 56px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Галочка над правим верхнім кутом картки */
+.success-icon {
+  position: absolute;
+  top: -74px;
+  left: 583.6px;
+  width: 148.36px;
+  height: 148.36px;
+  pointer-events: none;
+}
+
+.success-title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 58px;
+}
+
+.success-subtitle {
+  margin: 2px 0 0;
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+/* Кнопки */
+.success-btn {
+  width: 100%;
+  height: 81px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20.86px;
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: 0.17px;
+  text-decoration: none;
+  transition: filter 0.15s ease, background 0.2s ease;
+}
+
+.success-btn-primary {
+  margin-top: 50px;
+  background: linear-gradient(287deg, #6B8E23 0%, #283A04 100%);
+}
+
+.success-btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+.success-btn-secondary {
+  margin-top: 17px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.success-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Декоративне листя */
+/* object-fit: cover */
+.bg-leaf {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  object-fit: cover;
+  transform-origin: 0 0;
+}
+
+.leaf-1 { left: calc(50% - 505.99px); top: 87.41px; width: 126.56px; height: 127.83px; transform: rotate(92.874deg); }
+.leaf-2 { left: calc(50% + 663.38px); top: 127.47px; width: 39.19px; height: 39.58px; transform: rotate(174.035deg); }
+.leaf-3 { left: calc(50% - 618.91px); top: 566.36px; width: 39.19px; height: 39.58px; transform: rotate(174.035deg); }
+.leaf-4 { left: calc(50% + 599.87px); top: 610.49px; width: 84.71px; height: 85.56px; transform: rotate(-93.298deg); }
+.leaf-5 { left: calc(50% + 13.96px); top: 70.97px; width: 129.44px; height: 130.74px; transform: rotate(14.695deg); }
+.leaf-6 { left: calc(50% - 673.38px); top: 915px; width: 108px; height: 109.08px; transform: rotate(48.441deg); }
+.leaf-7 { left: calc(50% - 28.00px); top: 778.7px; width: 108px; height: 109.08px; transform: rotate(-0.373deg); }
+.leaf-8 { left: calc(50% + 616.00px); top: 1026.71px; width: 108px; height: 109.08px; transform: rotate(-71.994deg); }
+
+/* Планшет (до 1279px) */
+@media (max-width: 1279px) {
+  .service-page {
+    min-height: 1366px;
+  }
+
+  .success-card {
+    margin: 499px 0 0 calc(50% - 387px);
+  }
+
+  .leaf-1 { left: calc(50% - 548.01px); top: 1113.05px; width: 121.98px; height: 123.21px; transform: rotate(3deg); }
+  .leaf-2 { left: calc(50% - 465.03px); top: 327.08px;  width: 113.5px;  height: 114.64px; transform: rotate(-150deg); }
+  .leaf-3 { left: calc(50% + 582.17px); top: 739.03px;  width: 113.5px;  height: 114.64px; transform: rotate(-245deg); }
+  .leaf-4 { left: calc(50% + 92.05px);  top: 1137px;    width: 74.72px;  height: 75.47px;  transform: rotate(84deg); }
+  .leaf-5 { left: calc(50% + 46.37px);  top: 65.32px;   width: 81.65px;  height: 82.47px;  transform: rotate(-183deg); }
+  .leaf-6 { left: calc(50% + 434px);    top: 1332.17px; width: 104.09px; height: 105.14px; transform: rotate(-42deg); }
+  .leaf-7 { left: calc(50% + 481.74px); top: 273.66px;  width: 147.91px; height: 149.4px;  transform: rotate(-162deg); }
+  .leaf-8 { display: none; }
+}
+
+/* Вужчі планшети: картка 777px не влазить */
+@media (max-width: 849px) and (min-width: 768px) {
+  .success-card {
+    margin-left: auto;
+    margin-right: auto;
+    zoom: 0.9;
+  }
+}
+
+/* Телефон (до 767px) */
+@media (max-width: 767px) {
+  .service-page {
+    min-height: 848px;
+  }
+
+  .success-card {
+    width: 361.99px;
+    max-width: calc(100% - 16px);
+    margin: 338.81px auto 0;
+    padding: 26.09px 21.43px 26.08px;
+    border-radius: 18.64px;
+  }
+
+  .success-icon {
+    top: -34.48px;
+    left: 271.88px;
+    width: 68.95px;
+    height: 68.95px;
+  }
+
+  .success-title {
+    font-size: 22.36px;
+    line-height: 27.02px;
+  }
+
+  .success-subtitle {
+    margin-top: 0.93px;
+    font-size: 16.77px;
+    line-height: 18.64px;
+  }
+
+  .success-btn {
+    height: 37.74px;
+    border-radius: 9.72px;
+    font-size: 15.84px;
+    letter-spacing: 0.08px;
+  }
+
+  .success-btn-primary { margin-top: 23.29px; }
+  .success-btn-secondary { margin-top: 7.92px; }
+
+  .leaf-1 { left: calc(50% - 139.65px); top: 132.39px; width: 59.42px; height: 60.01px; transform: rotate(3deg); }
+  .leaf-2 { left: calc(50% - 100.92px); top: 866.32px; width: 59.42px; height: 60.01px; transform: rotate(-89deg); }
+  .leaf-3 { left: calc(50% + 123.71px); top: 740.6px;  width: 32.26px; height: 32.58px; transform: rotate(10deg); }
+  .leaf-4 { left: calc(50% + 215.52px); top: 188.38px; width: 55.53px; height: 56.09px; transform: rotate(177deg); }
+  .leaf-5 { left: calc(50% + 18.42px);  top: 79.21px;  width: 19.06px; height: 19.25px; transform: rotate(-50deg); }
+  .leaf-6 { left: calc(50% - 149.45px); top: 681.07px; width: 59.42px; height: 60.01px; transform: rotate(165deg); }
+  .leaf-7 { left: calc(50% + 143.84px); top: 664.08px; width: 59.42px; height: 60.01px; transform: rotate(-59deg); }
+  .leaf-8 { display: none; }
+}
+
+/* Кут градієнта фону */
+@media (max-width: 1279px) {
+  html, body { background-image: linear-gradient(111deg, #1C2A0B 0%, #669334 100%); }
+}
+@media (max-width: 767px) {
+  html, body { background-image: linear-gradient(103deg, #1C2A0B 0%, #669334 100%); }
+}
+
+/* Прозорість листочків */
+@media (min-width: 1280px) {
+  .leaf-4 { opacity: 0.9; }
+  .leaf-5 { opacity: 0.9; }
+  .leaf-6 { opacity: 0.5; }
+  .leaf-8 { opacity: 0.8; }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .leaf-6 { opacity: 0.5; }
+}
+@media (max-width: 767px) {
+  .leaf-1, .leaf-3, .leaf-4, .leaf-5, .leaf-6, .leaf-7 { opacity: 0.9; }
+  .leaf-2 { opacity: 1; }
+}

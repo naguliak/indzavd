@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap");
+@import url("login_page.css");
+
+/* LOG IN — вибір способу входу (email / Google / Дія) */
+
+/* Картка */
+.modal-card.modal-card-login {
+  z-index: 1;
+  width: 655px;
+  max-width: 655px;
+  height: 637px;
+  min-height: 0;
+  margin: 0 0 0 -7px; /* у макеті картка на 3.5px лівіше від центру */
+  padding: 0;
+  gap: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 48.82px;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Три крапки (дві темні, третя сіра) */
+.modal-card-login .card-dots {
+  position: absolute;
+  top: 28px;
+  right: 47px;
+  gap: 11px;
+}
+
+.modal-card-login .card-dots span {
+  width: 19px;
+  height: 19px;
+  background-color: #C2C2C2;
+}
+
+.modal-card-login .card-dots span.active {
+  background-color: #32451D;
+}
+
+/* Заголовок */
+.login-title {
+  width: 100%;
+  margin: 69px 0 0;
+  color: #FFFFFF;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 98px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.login-subtitle {
+  flex-shrink: 0;
+  width: 746px;
+  margin: 11px 0 0 7px;
+  color: #FFFFFF;
+  font-size: 27.34px;
+  font-weight: 400;
+  line-height: 37.1px;
+  text-align: center;
+}
+
+/* Кнопки */
+.login-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Зелена кнопка "Продовжити з email" */
+.btn-green.btn-full {
+  width: 575px;
+  height: 68px;
+  margin-top: 36.9px;
+  padding: 0;
+  border-radius: 20.86px;
+  background: linear-gradient(287deg, #6B8E23 0%, #283A04 100%);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/* "або" */
+.divider {
+  width: 183.57px;
+  margin-top: 20px;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 35.15px;
+  text-align: center;
+}
+
+/* Google / Дія */
+.btn-social {
+  position: relative;
+  width: 575px;
+  height: 68px;
+  padding: 0 0 1px 39px;
+  border-radius: 20px;
+  background: rgba(250, 253, 246, 0.92);
+  color: #243402;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-social:hover {
+  background: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.divider + .btn-social {
+  margin-top: 31.85px;
+}
+
+.btn-social + .btn-social {
+  margin-top: 18px;
+  padding: 0 0 5px 44px;
+}
+
+.social-icon {
+  position: absolute;
+  top: 20.42px;
+  left: 133.42px;
+  width: 34.5px;
+  height: 34.5px;
+  object-fit: contain;
+}
+
+.btn-social + .btn-social .social-icon {
+  top: 15px;
+  left: 136px;
+  width: 37px;
+  height: 37px;
+}
+
+/* Планшет (до 1279px) */
+@media (max-width: 1279px) {
+  .modal-card.modal-card-login {
+    width: 723px;
+    max-width: calc(100% - 32px);
+    height: 749px;
+    margin: 0;
+  }
+
+  .modal-card-login .card-dots {
+    top: 32.92px;
+    right: 57px;
+    gap: 11.16px;
+  }
+
+  .modal-card-login .card-dots span {
+    width: 21.65px;
+    height: 21.65px;
+  }
+
+  .login-title {
+    width: 719px;
+    margin: 95px 4px 0 0;
+    line-height: 115px;
+  }
+
+  .login-subtitle {
+    width: 723px;
+    margin: 10px 0 0;
+    line-height: 44px;
+  }
+
+  .btn-green.btn-full {
+    width: 635.12px;
+    height: 79.96px;
+    margin-top: 52px;
+    background: linear-gradient(286deg, #6B8E23 0%, #283A04 100%);
+  }
+
+  .divider {
+    margin-top: 43.04px;
+    line-height: 29px;
+  }
+
+  .btn-social {
+    width: 639px;
+    padding: 13.4px 0 0 50.5px;
+  }
+
+  .divider + .btn-social {
+    margin-top: 42px;
+    margin-left: 2px;
+  }
+
+  .btn-social + .btn-social {
+    width: 637px;
+    margin-top: 22px;
+    padding: 5px 0 0 34px;
+  }
+
+  .social-icon {
+    top: 19.8px;
+    left: 148.48px;
+    width: 38.3px;
+    height: 38.3px;
+  }
+
+  .btn-social + .btn-social .social-icon {
+    top: 12px;
+    left: 145px;
+    width: 45px;
+    height: 45px;
+  }
+
+  /* стрілка "назад" — як на сторінці входу (60.66, 60.38) */
+
+  /* Листочки — макет планшета */
+  .leaf-1 { left: calc(50% - 548px);    top: 81.48%; width: 121.98px; height: 123.21px; transform: rotate(3deg); opacity: 1; }
+  .leaf-2 { left: calc(50% + 19.05px);  top: 89.46%; width: 74.72px;  height: 75.47px;  transform: rotate(84deg); opacity: 1; }
+  .leaf-3 { left: calc(50% + 19.37px);  top: 7.93%;  width: 81.65px;  height: 82.47px;  transform: rotate(-183deg); opacity: 0.9; }
+  .leaf-4 { left: calc(50% + 434px);    top: 97.52%; width: 104.09px; height: 105.14px; transform: rotate(-42deg); opacity: 0.5; }
+  .leaf-5 { left: calc(50% + 357px);    top: 73.76%; width: 104.09px; height: 105.14px; transform: rotate(-1deg); opacity: 0.8; }
+  .leaf-6 { left: calc(50% + 532.74px); top: 12.49%; width: 147.91px; height: 149.4px;  transform: rotate(-162deg); opacity: 0.8; }
+  .leaf-7 { left: calc(50% + 568.28px); top: 34.92%; width: 124.76px; height: 126.01px; transform: rotate(84deg); opacity: 0.7; }
+  .leaf-8 { left: calc(50% - 377.84px); top: 24.73%; width: 113.5px;  height: 114.64px; transform: rotate(-218deg); display: block; opacity: 0.8; }
+}
+
+/* Телефон (до 767px) */
+@media (max-width: 767px) {
+  .modal-card.modal-card-login {
+    width: 341.2px;
+    max-width: calc(100% - 32px);
+    height: 400px;
+    border-radius: 30px;
+  }
+
+  .modal-card-login .card-dots {
+    top: 17.58px;
+    right: 26.92px;
+    gap: 4.29px;
+  }
+
+  .modal-card-login .card-dots span {
+    width: 10.87px;
+    height: 10.87px;
+  }
+
+  .login-title {
+    width: 339.31px;
+    margin: 49.13px 1.89px 0 0;
+    font-size: 50px;
+    line-height: 61.42px;
+    letter-spacing: 0.25px;
+  }
+
+  .login-subtitle {
+    width: 100%;
+    margin: 3.19px 0 0;
+    font-size: 18px;
+    line-height: 23.5px;
+  }
+
+  .btn-green.btn-full {
+    width: 293px;
+    height: 36px;
+    margin-top: 45.76px;
+    border-radius: 10px;
+    background: linear-gradient(287deg, #6B8E23 0%, #283A04 100%);
+    font-size: 14px;
+  }
+
+  .divider {
+    width: 100%;
+    margin-top: 10.08px;
+    font-size: 18px;
+    line-height: 15.49px;
+  }
+
+  .btn-social {
+    width: 293px;
+    height: 36px;
+    padding: 5px 0 0 37.4px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+
+  .divider + .btn-social {
+    margin-top: 19.43px;
+    margin-left: 0;
+  }
+
+  .btn-social + .btn-social {
+    width: 293px;
+    margin-top: 17px;
+    padding: 3px 0 0 53.3px;
+  }
+
+  .social-icon {
+    top: 9.74px;
+    left: 53.22px;
+    width: 17.5px;
+    height: 17.5px;
+  }
+
+  .btn-social + .btn-social .social-icon {
+    top: 7px;
+    left: 52px;
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Листочки — макет телефона */
+  .leaf-1 { left: calc(50% - 140.29px); top: 15.61%;  width: 59.69px; height: 60.29px; transform: rotate(3deg); opacity: 0.9; }
+  .leaf-2 { left: calc(50% - 101.39px); top: 102.15%; width: 59.69px; height: 60.29px; transform: rotate(-89deg); opacity: 1; }
+  .leaf-3 { left: calc(50% + 124.28px); top: 87.32%;  width: 32.41px; height: 32.73px; transform: rotate(10deg); opacity: 0.9; }
+  .leaf-4 { left: calc(50% + 216.51px); top: 22.21%;  width: 55.79px; height: 56.35px; transform: rotate(177deg); opacity: 0.9; }
+  .leaf-5 { left: calc(50% + 18.5px);   top: 9.34%;   width: 19.15px; height: 19.34px; transform: rotate(-50deg); opacity: 0.9; }
+  .leaf-6 { left: calc(50% - 150.14px); top: 80.31%;  width: 59.69px; height: 60.29px; transform: rotate(165deg); opacity: 0.9; }
+  .leaf-7 { left: calc(50% + 144.5px);  top: 75.83%;  width: 59.69px; height: 60.29px; transform: rotate(-59deg); opacity: 0.9; }
+  .leaf-8 { display: none; }
+}

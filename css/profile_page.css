@@ -1,0 +1,449 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&family=Poppins:wght@400&display=swap");
+
+/* Шрифти: Figtree, у підписах полів — Poppins */
+
+/* Сторінка профілю мешканця */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(126deg, #1C2A0B 0%, #669334 100%); /* як у Figma */
+}
+
+/* Сторінка — як фрейм у Figma: 1024px заввишки */
+.profile-page {
+  position: relative;
+  min-height: 1024px;
+  overflow: hidden;
+  font-family: 'Figtree', 'Noto Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Іконка "Повернутися назад" (праворуч угорі) */
+.logout-btn {
+  position: absolute;
+  z-index: 2;
+  top: 50px;
+  left: calc(50% + 627px);
+  width: 41px;
+  height: 39px;
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.back-chevron {
+  display: none; /* стрілка "<" — лише на планшеті й телефоні */
+}
+
+.logout-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg); /* у Figma іконка повернута на 180° */
+}
+
+/* Наведення: іконка стає оливковою (Variant2 у Figma) */
+.logout-btn:hover,
+.logout-btn:focus-visible {
+  color: #9EAE7A;
+}
+
+/* Картка */
+.profile-card {
+  position: relative;
+  z-index: 1;
+  width: 840px;
+  min-height: 924px;
+  margin: 48px auto 0;
+  padding: 61px 76px 0 77px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 48.82px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Фото */
+.profile-photo {
+  position: relative;
+  width: 182px;
+  height: 177px;
+  margin-left: 251px; /* як у Figma: 628px від лівого краю сторінки */
+  border-radius: 9999px;
+  overflow: hidden;
+  background: #D9D9D9;
+}
+
+.profile-photo img {
+  position: absolute;
+  left: -10px;
+  top: -21px;
+  width: 195px;
+  height: 260px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+/* Наведення: фото збільшується (Variant2 у Figma) */
+.profile-photo:hover img {
+  left: -35px;
+  top: -38px;
+  width: 247px;
+  height: 329px;
+}
+
+/* Ім'я */
+.profile-name {
+  margin: 27px 0 0;
+  color: #32451D;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 72px;
+  letter-spacing: 0.30px;
+  text-align: center;
+}
+
+/* Поля */
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  margin-top: 26px;
+}
+
+.profile-field + .profile-field {
+  margin-top: 15px;
+}
+
+.field-label {
+  position: relative;
+  top: 6px; /* у Figma текст підпису стоїть на 6px нижче за свій блок */
+  margin: 0 0 15px 5px;
+  color: #243402;
+  font-family: 'Poppins', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+/* У макеті підпис "Номер будинку та квартири" на 5px лівіше за інші */
+.profile-field-address .field-label {
+  margin-left: 0;
+}
+
+.field-input {
+  width: 687px;
+  height: 68px;
+  padding: 0 23px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.4);
+  color: rgba(50, 69, 29, 0.77);
+  font-family: inherit;
+  font-size: 28.06px;
+  font-weight: 500;
+  line-height: 34px;
+  letter-spacing: 0.14px;
+}
+
+.field-email {
+  text-decoration: underline;
+}
+
+/* Кнопки */
+.profile-buttons {
+  display: flex;
+  align-items: flex-start;
+  gap: 66px;
+  margin: 57px 0 0 -2px;
+}
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 310px;
+  height: 76px;
+  border: none;
+  border-radius: 18.19px;
+  background: linear-gradient(90deg, #6B8E23 0%, #BD6A6D 98%);
+  color: #ffffff;
+  font-family: inherit;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.profile-btn-edit {
+  margin-top: 2px; /* у макеті ця кнопка на 2px нижча за сусідню */
+  font-size: 26px;
+}
+
+.profile-btn-back {
+  padding-bottom: 4px; /* у макеті текст на 2px вище центру */
+  font-size: 24px;
+}
+
+/* Наведення: градієнт "перевертається" (Variant2 у Figma) */
+.profile-btn-edit:hover,
+.profile-btn-edit:focus-visible {
+  background: linear-gradient(90deg, #BD6A6D 0%, #6B8E23 100%);
+}
+
+.profile-btn-back:hover,
+.profile-btn-back:focus-visible {
+  background: linear-gradient(90deg, #BD6A6D 0%, #6B8E23 98%);
+}
+
+/* Декоративне листя */
+/* object-fit: cover — як "Fill" у Figma */
+.bg-leaf {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  object-fit: cover;
+  transform-origin: 0 0;
+}
+
+.leaf-1 { left: calc(50% - 505.99px); top: 87.41px; width: 126.56px; height: 127.83px; transform: rotate(92.874deg); }
+.leaf-2 { left: calc(50% + 663.38px); top: 127.47px; width: 39.19px; height: 39.58px; transform: rotate(174.035deg); }
+.leaf-3 { left: calc(50% - 618.91px); top: 566.36px; width: 39.19px; height: 39.58px; transform: rotate(174.035deg); }
+.leaf-4 { left: calc(50% + 599.87px); top: 610.49px; width: 84.71px; height: 85.56px; transform: rotate(-93.298deg); }
+.leaf-5 { left: calc(50% + 13.96px); top: 70.97px; width: 129.44px; height: 130.74px; transform: rotate(14.695deg); }
+.leaf-6 { left: calc(50% - 673.38px); top: 915px; width: 108px; height: 109.08px; transform: rotate(48.441deg); }
+.leaf-7 { left: calc(50% - 28.00px); top: 778.7px; width: 108px; height: 109.08px; transform: rotate(-0.373deg); }
+.leaf-8 { left: calc(50% + 616.00px); top: 1026.71px; width: 108px; height: 109.08px; transform: rotate(-71.994deg); }
+
+/* Планшет (до 1279px) */
+@media (max-width: 1279px) {
+  /* на вужчих планшетах ім'я не переноситься на два рядки */
+  .profile-name {
+    font-size: clamp(40px, 5.86vw, 60px);
+  }
+
+  .profile-page {
+    min-height: 1366px;
+  }
+
+  /* Картка: на 1024px */
+  .profile-card {
+    width: calc(100% - 184px);
+    max-width: 840px;
+    margin-top: 221px;
+    padding: 61px 7.4% 50px 7.5%;
+  }
+
+  /* Фото по центру */
+  .profile-photo {
+    align-self: center;
+    margin-left: 0;
+    left: -2px; /* у макеті фото на 2px лівіше центру */
+  }
+
+  .field-input {
+    width: 100%;
+  }
+
+  /* Проміжок між кнопками: 66px на 1024px */
+  .profile-buttons {
+    gap: clamp(20px, 6.45vw, 66px);
+  }
+
+  .profile-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 310px;
+    text-align: center;
+  }
+
+  /* На вужчих планшетах текст кнопок трохи менший */
+  .profile-btn-edit {
+    font-size: clamp(20px, 2.55vw, 26px);
+  }
+
+  .profile-btn-back {
+    font-size: clamp(18px, 2.35vw, 24px);
+  }
+
+  /* Стрілка "<" ліворуч угорі */
+  /* та сама стрілка */
+  .logout-btn {
+    left: 61px;
+    top: 61px;
+    width: 36px;
+    height: 62px;
+  }
+
+  .logout-icon {
+    display: none;
+  }
+
+  .back-chevron {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Листочки */
+  .leaf-1 { left: calc(50% - 548.01px); top: 1113.05px; width: 121.98px; height: 123.21px; transform: rotate(3deg); }
+  .leaf-2 { left: calc(50% - 409.84px); top: 337.80px;  width: 113.50px; height: 114.64px; transform: rotate(-218deg); }
+  .leaf-3 { left: calc(50% + 561.16px); top: 696.39px;  width: 113.50px; height: 114.64px; transform: rotate(-245deg); }
+  .leaf-4 { left: calc(50% + 19.05px);  top: 1222px;    width: 74.72px;  height: 75.47px;  transform: rotate(84deg); }
+  .leaf-5 { left: calc(50% + 19.37px);  top: 108.32px;  width: 81.65px;  height: 82.47px;  transform: rotate(-183deg); }
+  .leaf-6 { left: calc(50% + 434px);    top: 1332.17px; width: 104.09px; height: 105.14px; transform: rotate(-42deg); }
+  .leaf-7 { left: calc(50% + 535.74px); top: 220.66px;  width: 147.91px; height: 149.40px; transform: rotate(-162deg); }
+  .leaf-8 { display: none; }
+}
+
+/* Телефон (до 767px) */
+@media (max-width: 767px) {
+  .profile-page {
+    min-height: 100vh;
+    padding: 80px 16px 40px;
+  }
+
+  .profile-card {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 28px 20px 24px;
+    border-radius: 24px;
+  }
+
+  .profile-photo {
+    left: 0;
+    width: 110px;
+    height: 107px;
+  }
+
+  /* Фото пропорційно зменшене (110 / 182) */
+  .profile-photo img {
+    left: -6px;
+    top: -13px;
+    width: 118px;
+    height: 157px;
+  }
+
+  .profile-photo:hover img {
+    left: -21px;
+    top: -23px;
+    width: 149px;
+    height: 199px;
+  }
+
+  .profile-name {
+    margin-top: 14px;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: 0.15px;
+  }
+
+  .profile-field {
+    margin-top: 18px;
+  }
+
+  .profile-field + .profile-field {
+    margin-top: 10px;
+  }
+
+  .field-label {
+    top: 3px;
+    margin: 0 0 8px 4px;
+    font-size: 13px;
+    line-height: 12px;
+  }
+
+  .profile-field-address .field-label {
+    margin-left: 0;
+  }
+
+  .field-input {
+    height: 42px;
+    padding: 0 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.08px;
+  }
+
+  .profile-buttons {
+    flex-direction: column;
+    gap: 10px;
+    margin: 26px 0 0;
+  }
+
+  .profile-btn,
+  .profile-btn-edit,
+  .profile-btn-back {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: none;
+    height: 44px;
+    margin-top: 0;
+    padding-bottom: 0;
+    border-radius: 10px;
+    font-size: 17px;
+  }
+
+  /* Стрілка "<" — як на інших телефонних макетах (14×23) */
+  .logout-btn {
+    left: 24px;
+    top: 30px;
+    width: 14px;
+    height: 23px;
+  }
+
+  /* Листочки на телефоні — вдвічі менші, частину ховаємо */
+  .bg-leaf {
+    scale: 0.5;
+  }
+
+  .leaf-1 { left: -10px; top: auto; bottom: 40px; }
+  .leaf-2 { left: -20px; top: 160px; }
+  .leaf-3 { left: auto; right: -30px; top: 700px; }
+  .leaf-5 { left: auto; right: 40px; top: 20px; }
+  .leaf-4,
+  .leaf-6,
+  .leaf-7 {
+    display: none;
+  }
+}
+
+/* Кут градієнта фону */
+@media (max-width: 1279px) {
+  html, body { background-image: linear-gradient(111deg, #1C2A0B 0%, #669334 100%); }
+}
+@media (max-width: 767px) {
+  html, body { background-image: linear-gradient(103deg, #1C2A0B 0%, #669334 100%); }
+}
+
+/* Прозорість листочків */
+@media (min-width: 1280px) {
+  .leaf-4 { opacity: 0.9; }
+  .leaf-5 { opacity: 1; }
+  .leaf-6 { opacity: 0.5; }
+  .leaf-8 { opacity: 0.8; }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .leaf-2, .leaf-3, .leaf-7 { opacity: 0.8; }
+  .leaf-5 { opacity: 0.9; }
+  .leaf-6 { opacity: 0.5; }
+}
+
+/* Планшет: ім'я в макеті на 1px лівіше від центру */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .profile-name {
+    position: relative;
+    left: -1px;
+  }
+}

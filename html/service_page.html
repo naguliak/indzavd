@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оплата комунальних послуг</title>
+  <link rel="stylesheet" href="../css/service_page.css">
+  <script src="../js/service_page.js" defer></script>
+</head>
+<body>
+
+  <div class="service-page">
+    <!-- Декоративне листя -->
+    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-1">
+    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-2">
+    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-3">
+    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-4">
+    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-5">
+    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-6">
+    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-7">
+    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-8">
+
+    <!-- Картка оплати: усі блоки йдуть один за одним (flex) -->
+    <main class="service-card">
+
+      <div class="service-header">
+        <h1 class="service-title">Оплата комунальних послуг</h1>
+
+        <!-- Кнопка закриття (хрестик) -->
+        <a href="resident_page.html" class="service-close-btn" aria-label="Закрити">
+          <span class="close-icon"></span>
+        </a>
+      </div>
+
+      <!-- Вибір послуги -->
+      <div class="service-tabs">
+        <label class="service-tab">
+          <input type="radio" name="service-type" checked>
+          <span class="tab-bg"></span>
+          <span class="tab-text">Електроенергія</span>
+        </label>
+
+        <label class="service-tab">
+          <input type="radio" name="service-type">
+          <span class="tab-bg"></span>
+          <span class="tab-text">Водопостачання</span>
+        </label>
+
+        <label class="service-tab">
+          <input type="radio" name="service-type">
+          <span class="tab-bg"></span>
+          <span class="tab-text">Інтернет</span>
+        </label>
+      </div>
+
+      <!-- Вибір способу оплати -->
+      <div class="payment-methods">
+        <span class="payment-label">Спосіб оплати:</span>
+
+        <div class="method-list">
+          <label class="method-btn">
+            <input type="radio" name="pay-method" id="pay-paypal" checked>
+            <span class="method-bg"></span>
+            <span class="method-text">PayPal</span>
+          </label>
+
+          <label class="method-btn">
+            <input type="radio" name="pay-method" id="pay-card">
+            <span class="method-bg"></span>
+            <span class="method-text">Credit Card</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Поля картки: з'являються, коли обрано Credit Card -->
+      <div class="card-details-row">
+        <div class="info-group">
+          <label class="info-text" for="card-number">Номер картки:</label>
+          <div class="sum-box card-box">
+            <input type="text" id="card-number" class="sum-input" placeholder="0000 0000 0000 0000" maxlength="19" inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="info-group">
+          <label class="info-text" for="card-date">Термін дії:</label>
+          <div class="sum-box date-box">
+            <input type="text" id="card-date" class="sum-input" placeholder="MM/YY" maxlength="5" inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="info-group">
+          <span class="info-text">CVV:</span>
+          <div class="cvv-boxes">
+            <input type="password" class="cvv-box" maxlength="1" inputmode="numeric" aria-label="CVV, цифра 1">
+            <input type="password" class="cvv-box" maxlength="1" inputmode="numeric" aria-label="CVV, цифра 2">
+            <input type="password" class="cvv-box" maxlength="1" inputmode="numeric" aria-label="CVV, цифра 3">
+          </div>
+        </div>
+      </div>
+
+      <!-- Заборгованість та сума до сплати -->
+      <div class="payment-info-row">
+        <div class="info-group">
+          <label class="info-text" for="debt">Поточна заборгованість:</label>
+          <div class="sum-box">
+            <input type="text" id="debt" class="sum-input" value="100" readonly>
+          </div>
+          <span class="currency">грн</span>
+        </div>
+
+        <div class="info-group">
+          <label class="info-text" for="amount">Введіть суму для сплати:</label>
+          <div class="sum-box sum-box-wide">
+            <input type="number" id="amount" class="sum-input editable" value="50" min="1">
+          </div>
+          <span class="currency">грн</span>
+        </div>
+      </div>
+
+      <!-- Головна кнопка Сплатити -->
+      <a href="successful_page.html" class="btn-pay-submit">Сплатити</a>
+
+    </main>
+  </div>
+
+</body>
+</html>

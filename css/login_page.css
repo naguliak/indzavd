@@ -1,0 +1,351 @@
+@import url("base.css");
+@import url("reset.css");
+/* Figtree не має кирилиці */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap");
+
+body {
+  font-family: 'Figtree', 'Noto Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: var(--bg-color); 
+  background: linear-gradient(126deg, #1C2A0B 0%, #669334 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* Кнопка назад */
+.back-btn {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  width: 64px;
+  height: 62px;
+  padding: 0;
+  display: block;
+  background: url("../img/back_btn.svg") center / 100% 100% no-repeat;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.back-btn:hover {
+  background-image: url("../img/back_btn_hover.svg");
+}
+
+/* стара картинка nazad.png більше не потрібна */
+.back-icon {
+  display: none;
+}
+
+/* Листочки: у Figma картинка стоїть як "Fill" */
+.bg-leaf {
+  object-fit: cover;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+}
+
+/* Картка */
+.modal-card {
+  position: relative;
+  width: 904.37px;
+  max-width: 904.37px;
+  height: 363px;
+  background: rgba(255, 255, 255, 0.30);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 50.93px;
+  padding: 80.32px 57px 43.81px 57px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрування внутрішніх елементів */
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-top: 29px; /* картка стоїть на y=345, як у макеті 1440×1024 */
+}
+
+/* Три крапки */
+.card-dots {
+  position: absolute;
+  top: 44px;
+  right: 57px;
+  display: flex;
+  gap: 11.47px;
+}
+
+.card-dots span {
+  width: 19.82px;
+  height: 19.82px;
+  background-color: #9EAE7A;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease;
+}
+
+.card-dots span.active,
+.card-dots span:first-child {
+  background-color: #32451D;
+}
+
+/* Заголовок */
+.card-title {
+  color: #FFFFFF;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.21px;
+  text-align: left; /* у макеті заголовок вирівняний ліворуч */
+  margin: 0;
+  width: 100%;
+  max-width: 790.67px;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 68.69px;
+  justify-content: flex-start; /* зелена кнопка на одній лінії з заголовком */
+  align-items: center;
+  width: 100%;
+}
+
+.btn {
+  height: 77.19px;
+  border-radius: 20.86px;
+  font-size: 25.03px;
+  font-weight: 600;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 10px;
+  box-sizing: border-box;
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  transition: background-position 0.4s ease, transform 0.2s ease, opacity 0.2s ease;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background-position: 100% 0%;
+  opacity: 0.95;
+}
+
+.btn-green {
+  width: 346.31px;
+  /* кут виміряний на експортах макета */
+  background: linear-gradient(279deg, #6B8E23 0%, #283A04 100%);
+}
+
+.btn-red {
+  width: 366.13px;
+  background: linear-gradient(126deg, #800E12 0%, #BD6A6D 89%);
+}
+
+/* Tablet (768px – 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .modal-card {
+    width: 90%;
+    max-width: 760px;
+    height: auto;
+    padding: 60px 40px 40px;
+    margin-top: 0;
+  }
+  .card-title {
+    font-size: 34px;
+    margin-bottom: 35px;
+    text-align: center;
+  }
+  .buttons-wrapper {
+    gap: 24px;
+    justify-content: center;
+  }
+  .btn {
+    font-size: 20px;
+    height: 68px;
+  }
+  .btn-green {
+    width: 310px;
+  }
+  .btn-red {
+    width: 330px;
+  }
+}
+
+/* Mobile (до 767px) */
+@media (max-width: 767px) {
+  .modal-card {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    padding: 50px 20px 30px;
+    border-radius: 30px;
+    margin-top: 0;
+    align-items: center;
+  }
+  .card-title {
+    font-size: 24px;
+    line-height: 130%;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .buttons-wrapper {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .buttons-wrapper .btn {
+    width: 100%;
+  }
+
+  .btn {
+    height: 60px;
+    font-size: 18px;
+  }
+  .back-btn {
+    top: 20px;
+    left: 20px;
+  }
+  .card-dots {
+    top: 20px;
+    right: 20px;
+  }
+}
+
+/* Стрілка "<" на планшеті й телефоні */
+@media (max-width: 1279px) {
+  .back-btn {
+    top: 61px;
+    left: 61px;
+    width: 36px;
+    height: 62px;
+    background: url("../img/back_chevron.svg") center / 100% 100% no-repeat;
+    transition: none;
+  }
+
+  .back-btn:hover {
+    background-image: url("../img/back_chevron_hover.svg");
+  }
+}
+
+/* Планшет 1024px: картка така сама */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .leaf-1 { left: calc(50% - 548px);    top: 81.48%; width: 121.98px; height: 123.21px; transform: rotate(3deg); opacity: 1; }
+  .leaf-2 { left: calc(50% - 377.94px); top: 24.75%; width: 113.5px;  height: 114.64px; transform: rotate(-218deg); opacity: 0.8; }
+  .leaf-3 { left: calc(50% + 19.05px);  top: 89.46%; width: 74.72px;  height: 75.47px;  transform: rotate(84deg); opacity: 1; }
+  .leaf-4 { left: calc(50% + 19.37px);  top: 7.93%;  width: 81.65px;  height: 82.47px;  transform: rotate(-183deg); opacity: 0.9; }
+  .leaf-5 { left: calc(50% + 241.28px); top: 23.57%; width: 124.76px; height: 126.01px; transform: rotate(84deg); opacity: 0.7; }
+  .leaf-6 { left: calc(50% + 434px);    top: 97.52%; width: 104.09px; height: 105.14px; transform: rotate(-42deg); opacity: 0.5; }
+  .leaf-7 { left: calc(50% + 279px);    top: 71.49%; width: 104.09px; height: 105.14px; transform: rotate(-1deg); opacity: 0.8; }
+  .leaf-8 { left: calc(50% + 532.74px); top: 12.49%; width: 147.91px; height: 149.4px;  transform: rotate(-162deg); opacity: 0.8; }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .modal-card {
+    margin-top: 43px;
+  }
+}
+
+/* Телефон: картка 341×243 з макета */
+@media (max-width: 767px) {
+  .back-btn {
+    top: 78px;
+    left: 26px;
+    width: 14px;
+    height: 23px;
+  }
+
+  .modal-card {
+    width: 341px;
+    max-width: calc(100% - 32px);
+    height: 243px;
+    padding: 16px 24px 24px;
+    border-radius: 28px;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 21px;
+  }
+
+  /* крапки — окремим рядком справа, як у макеті */
+  .card-dots {
+    position: static;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .card-dots span {
+    width: 10px;
+    height: 10px;
+  }
+
+  .card-title {
+    min-height: 53px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0;
+    text-align: left;
+  }
+
+  .buttons-wrapper {
+    gap: 21px;
+  }
+
+  .btn {
+    height: 36px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  .btn-red {
+    font-size: 14px;
+  }
+
+  .btn-green {
+    background: linear-gradient(287deg, #6B8E23 0%, #283A04 100%);
+  }
+
+  .leaf-1 { left: calc(50% + 200.33px); top: 13%;    width: 43.32px; height: 43.76px; transform: rotate(177deg); opacity: 0.9; }
+  .leaf-2 { left: calc(50% - 137.29px); top: 16.31%; width: 59.69px; height: 60.29px; transform: rotate(3deg); opacity: 0.9; }
+  .leaf-3 { left: calc(50% + 112.64px); top: 34.39%; width: 34.23px; height: 34.57px; transform: rotate(-99deg); opacity: 0.9; }
+  .leaf-4 { left: calc(50% + 154.87px); top: 71.17%; width: 59.69px; height: 60.29px; transform: rotate(-59deg); opacity: 0.9; }
+  .leaf-5 { left: calc(50% - 120.14px); top: 77.37%; width: 59.69px; height: 60.29px; transform: rotate(165deg); opacity: 0.9; }
+  .leaf-6 { left: calc(50% - 101.39px); top: 102.15%; width: 59.69px; height: 60.29px; transform: rotate(-89deg); opacity: 1; }
+  .leaf-7 { left: calc(50% + 121.28px); top: 85.68%; width: 32.41px; height: 32.73px; transform: rotate(10deg); opacity: 0.9; }
+  .leaf-8 { display: none; }
+}
+
+/* Кут градієнта фону */
+@media (max-width: 1279px) {
+  body { background-image: linear-gradient(111deg, #1C2A0B 0%, #669334 100%); }
+}
+@media (max-width: 767px) {
+  body { background-image: linear-gradient(103deg, #1C2A0B 0%, #669334 100%); }
+}
+
+/* Точні кути повороту листочків з Figma */
+@media (min-width: 1280px) {
+  .leaf-1 { transform: rotate(92.874deg); opacity: 1; }
+  .leaf-2 { transform: rotate(174.035deg); opacity: 1; }
+  .leaf-3 { transform: rotate(174.035deg); opacity: 1; }
+  .leaf-4 { transform: rotate(-93.298deg); opacity: 0.9; }
+  .leaf-5 { transform: rotate(14.695deg); opacity: 0.9; }
+  .leaf-6 { transform: rotate(48.441deg); opacity: 0.5; }
+  .leaf-7 { transform: rotate(-0.373deg); opacity: 1; }
+  .leaf-8 { transform: rotate(-71.994deg); opacity: 0.8; }
+}

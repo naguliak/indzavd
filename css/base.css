@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Градієнт та фоновий колір сторінки */
+  --bg-color: #1C2A0B;
+  --bg-gradient: linear-gradient(135deg, #1C2A0B 0%, #669334 100%);
+
+  /* Градієнти кнопок */
+  --btn-green-bg: #6B8E23;
+  --btn-green-gradient: linear-gradient(90deg, rgba(40, 58, 4, 1) 0%, rgba(107, 142, 35, 1) 50%);
+
+  --btn-red-bg: #800E12;
+  --btn-red-gradient: linear-gradient(90deg, rgba(128, 14, 18, 1) 0%, rgba(189, 106, 109, 1) 50%);
+
+  /* Кольори картки та тексту */
+  --card-bg: rgba(255, 255, 255, 0.3);
+  --text-white: #FFFFFF;
+  --dot-inactive-bg: #FFFFFF;
+  --dot-active-bg: #32451D;
+
+  /* Шрифти */
+  --font-family-main: "Figtree", sans-serif;
+
+  /* Розміри елементів першої сторінки */
+  --card-width-main: 904.37px;
+  --card-height-main: 363px;
+  --btn-width-main: 346.31px;
+  --btn-height-main: 77.19px;
+
+  /* Розміри елементів сторінок входу */
+  --card-width-login: 655px;
+  --card-height-login: 627px;
+  --btn-width-login: 575px;
+  --btn-height-login: 68px;
+
+  /* Радіуси скруглення */
+  --card-radius: 50.93px;
+  --btn-radius-main: 21px;
+  --btn-radius-login: 16px;
+}
+
+.bg-leaf {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  object-fit: contain;
+  transform-origin: top left;
+}
+
+.leaf-1 { left: 14.862%; top: 8.536%;   width: 126.56px; height: 127.83px; transform: rotate(93deg); }
+.leaf-2 { left: 96.068%; top: 12.448%;  width: 39.19px;  height: 39.58px;  transform: rotate(174deg); }
+.leaf-3 { left: 7.020%;  top: 55.309%;  width: 39.19px;  height: 39.58px;  transform: rotate(174deg); }
+.leaf-4 { left: 91.658%; top: 59.618%;  width: 84.71px;  height: 85.56px;  transform: rotate(-93deg); }
+.leaf-5 { left: 50.969%; top: 6.931%;   width: 129.44px; height: 130.74px; transform: rotate(15deg); }
+.leaf-6 { left: 3.238%;  top: 89.355%;  width: 108px;    height: 109.08px; transform: rotate(48deg); }
+.leaf-7 { left: 48.056%; top: 76.045%;  width: 108px;    height: 109.08px; }
+.leaf-8 { left: 92.778%; top: 100.265%; width: 108px;    height: 109.08px; transform: rotate(-72deg); }

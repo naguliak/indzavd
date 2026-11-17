@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRAND HOME - Кабінет мешканця</title>
+  <link rel="stylesheet" href="../css/resident_page.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/calendar.js" defer></script>
+  <script src="../js/charts.js" defer></script>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-bg"><img src="../img/flowers.png" alt=""></div>
+    <div class="container">
+      <div class="hero-top">
+        <h1 class="hello">Hello,<br><strong>Liana</strong></h1>
+        <a href="profile_page.html" aria-label="Профіль"><img src="../img/user.png" alt="" class="avatar"></a>
+      </div>
+
+      <form class="search" role="search">
+        <input type="search" class="search-input" placeholder="Пошук...">
+        <button type="submit" class="search-btn" aria-label="Шукати">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+        </button>
+      </form>
+
+      <h2 class="section-title title-services">Послуги</h2>
+      <nav class="services">
+        <a href="service_page.html" class="service service-yellow">Оплата комун послуг</a>
+        <a href="#" class="service service-pink service-sm">Аналітика споживання</a>
+        <a href="#" class="service service-yellow">Чат-бот підтримки</a>
+        <a href="#" class="service service-pink">Більше послуг</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section>
+      <h2 class="section-title">Новини</h2>
+      <div class="news">
+        <article class="news-card news-pink"><img src="../img/rp1.png" alt=""></article>
+        <article class="news-card news-yellow"><img src="../img/rp2.png" alt=""></article>
+        <article class="news-card news-pink"><img src="../img/rp3.png" alt=""></article>
+        <article class="news-card news-yellow"><img src="../img/rp4.jpg" alt=""></article>
+        <article class="news-card news-pink"><img src="../img/rp5.jpg" alt=""></article>
+        <article class="news-card news-yellow"><img src="../img/rp6.jpg" alt=""></article>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <h2 class="section-title">Статистика споживання комунальних послуг</h2>
+      <div class="stats">
+
+        <div class="stats-left">
+          <!-- 1. Лінійний графік споживання -->
+          <div class="stat stat-line">
+            <h4>Графік споживання</h4>
+            <div class="chart-container-sm">
+              <canvas id="lineConsumptionChart"></canvas>
+            </div>
+          </div>
+
+          <!-- 2. Polar Area Chart -->
+          <div class="stat stat-share">
+            <div class="chart-container-sm polar-full-block">
+             <canvas id="polarAreaChart"></canvas>
+            </div>       
+          </div>
+
+          <!-- 3. Бар-чарт для тижневого споживання -->
+          <div class="stat stat-week">
+            <h3>Тижневе споживання електроенергії</h3>
+            <div class="chart-container-bars">
+              <canvas id="weeklyBarChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-right">
+          <!-- 4. Doughnut Chart для загального відсотка -->
+          <div class="stat stat-percent">
+            <div class="chart-container-ring">
+              <canvas id="doughnutRingChart"></canvas>
+              <span class="ring-center-text">84%</span>
+            </div>
+          </div>
+
+          <div class="stat-actions">
+            <a href="#" class="btn-pdf">Завантажити в pdf</a>
+            <a href="#" class="btn-more">Детальніше</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+<!-- Календар та замовлення -->
+<section class="calendar-section">
+  <div class="container">
+    <h2 class="section-title">Календар роботи комунальних служб та замовлених послуг</h2>
+    <div class="calendar-row">
+      
+      <!-- Календар -->
+      <div class="calendar">
+        <div class="calendar-dots">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        
+        <div class="calendar-header">
+          <button id="prev-btn" class="cal-nav-btn" aria-label="Попередній місяць">‹</button>
+          <h3 id="month-year">Листопад 2026</h3>
+          <button id="next-btn" class="cal-nav-btn" aria-label="Наступний місяць">›</button>
+        </div>
+        
+        <p class="updated" id="last-updated">останнє оновлення: 15.11 11:49</p>
+        
+        <div class="calendar-card-inner">
+          <div class="calendar-weekdays">
+            <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Нд</span>
+          </div>
+          <div class="days" id="calendar-days"></div>
+        </div>
+      </div>
+
+      <!-- Замовлення з вертикальним скролом -->
+      <div class="orders">
+        <h3 class="orders-month">October</h3>
+        
+        <h4 style="margin-top: 0;">Ваші замовлення:</h4>
+        <ul>
+          <li><span class="square-icon red-bg"></span>Орендний договір</li>
+          <li><span class="square-icon yellow-bg"></span>Сервіс із ремонту ліфту</li>
+        </ul>
+
+        <h4 style="margin-top: 20px;">Комунальні послуги:</h4>
+        <ul>
+          <li><span class="square-icon blue-bg"></span>Вивезення сміття</li>
+          <li><span class="square-icon green-bg"></span>Прибирання території комплексу</li>
+          <li><span class="square-icon pink-bg"></span>Планові перевірки комунікацій</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer class="feedback">
+    <div class="container">
+      <h2>Допоможіть стати нам ще краще!</h2>
+      <p>Заповнюйте форму задля покращення умов приживання для наших мешканців у житловому комплексі. Також будемо вдячні за ваш відгук!</p>
+      <div class="feedback-btns">
+        <a href="#" class="fb-btn fb-green">Заповнити форму</a>
+        <a href="#" class="fb-btn fb-yellow">Написати відгук</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Фонове листя -->
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-1">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-2">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-3">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-4">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-5">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-6">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-7">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-8">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-9">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-10">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-11">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-12">
+
+</body>
+</html>
