@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRAND HOME — Головна сторінка</title>
+  <meta name="theme-color" content="#32451D">
+  <link rel="stylesheet" href="../css/golovna_page.css">
+  <link rel="stylesheet" href="../css/golovna_page_adaptive.css?v=9">
+</head>
+<body>
+
+  <div class="figma-canvas">
+
+    <!-- ================= ПЕРШИЙ ЕКРАН (HERO) ================= -->
+    <section class="hero-section">
+      <picture>
+        <source media="(max-width: 1180px) and (orientation: portrait)" srcset="../img/hero_house_mobile.png">
+        <img src="../img/hero_house.png" alt="GRAND HOME" class="hero-bg-img">
+      </picture>
+      <div class="hero-overlay"></div>
+
+      <header class="site-header">
+        <a href="golovna_page.html" class="logo">GRAND HOME</a>
+
+        <nav class="nav-pill" id="mainNav">
+          <a href="#about" class="nav-link">Про нас</a>
+          <a href="#services" class="nav-link">Сервіси</a>
+          <a href="#faq" class="nav-link">Часті питання</a>
+          <a href="login_page.html" class="nav-link nav-link--cabinet">Кабінет мешканця</a>
+        </nav>
+
+        <a href="login_page.html" class="cabinet-top-link">Кабінет мешканця</a>
+
+        <button class="burger-btn" id="burgerBtn" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </header>
+
+      <h1 class="hero-title">
+        <strong>Ваш дім</strong> <span class="thin-dash">–</span><br>
+        <strong>наша щоденна турбота</strong>
+      </h1>
+
+      <p class="hero-subtitle">
+        Об'єднуємо професійне управління майном, сучасну інфраструктуру та традиційний затишок. Безпечне та комфортне середовище для кожного мешканця.
+      </p>
+
+      <button type="button" class="hero-btn btn-find">
+        Знайти квартиру
+      </button>
+      <button type="button" class="hero-btn btn-contact">
+        Сконтактувати з нами
+      </button>
+    </section>
+
+    <!-- ================= ПРО НАС (1025px – 3420px) ================= -->
+    <section id="about" class="about-section">
+      <img src="../img/section_stone.png" alt="" class="about-stone-bg">
+
+      <h2 class="about-title">ПРО НАС</h2>
+
+      <!-- Вертикальна лінія та 4 точки -->
+      <div class="timeline-vertical"></div>
+      <div class="tl-dot dot-1"></div>
+      <div class="tl-dot dot-2"></div>
+      <div class="tl-dot dot-3"></div>
+      <div class="tl-dot dot-4"></div>
+
+      <!-- Текст 1 (справа зверху) -->
+      <p class="about-text text-top-right">
+        Заснований понад 20 років тому, наш житловий комплекс перетворився на яскраву та згуртовану спільноту. Ми поєднуємо багаторічний досвід управління із сучасною інфраструктурою, аби забезпечити максимальний затишок та спокій для кожного мешканця.
+      </p>
+
+      <!-- Фото-картки -->
+      <div class="about-gallery carousel" data-carousel data-carousel-label="Фото комплексу">
+        <div class="carousel-track">
+          <!-- Картка 1 (зліва) -->
+          <div class="polaroid-frame frame-1">
+            <div class="polaroid-inner">
+              <img src="../img/photo_card_1.png" alt="Територія комплексу" class="unrotate-card-1">
+            </div>
+          </div>
+          <!-- Картка 2: Велосипедисти (справа вище) -->
+          <div class="polaroid-frame frame-2">
+            <div class="polaroid-inner">
+              <img src="../img/rp1.png" alt="Велопрогулянки">
+            </div>
+          </div>
+          <!-- Картка 3: Футбольне поле (справа посередині) -->
+          <div class="polaroid-frame frame-3">
+            <div class="polaroid-inner">
+              <img src="../img/rp2.png" alt="Стадіон комплексу">
+            </div>
+          </div>
+          <!-- Картка 4: Котедж з терасою (справа перед мапою) -->
+          <div class="polaroid-frame frame-4">
+            <div class="polaroid-inner">
+              <img src="../img/photo_card_4.png" alt="Відпочинкова зона" class="unrotate-card-4">
+            </div>
+          </div>
+        </div>
+        <button type="button" class="carousel-btn carousel-btn--prev" aria-label="Попередній слайд"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button type="button" class="carousel-btn carousel-btn--next" aria-label="Наступний слайд"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        <div class="carousel-dots"></div>
+      </div>
+
+
+
+      <!-- Текст 2 (зліва посередині) -->
+      <p class="about-text text-mid-left">
+        За десятиліття роботи ми здобули довіру тисячі мешканців. Наш пріоритет – створення безпечного, зеленого та комфортного середовища: доглянуті двори, сучасні дитячі майданчики та чисті околиці. Завдяки нашому онлайн-порталу управління комунальними послугами, замовлення обслуговування та перегляд новин стали швидкими, прозорими й зручними.
+      </p>
+
+
+      <!-- Статистика (зліва внизу) -->
+      <div class="stats-card">
+        <div class="stats-top">
+          <strong>75 000+ м²</strong>
+          <span>доглянутої території та приміщень</span>
+        </div>
+        <div class="stats-bottom">
+          <div class="stats-box-15">
+            <strong>15</strong>
+            <span>років<br>досвіду</span>
+          </div>
+          <div class="stats-box-5000">
+            <strong>5000+</strong>
+            <span>задоволених мешканців</span>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Картка 5: Мапа комплексу (пряма внизу справа) -->
+      <div class="polaroid-map">
+        <div class="polaroid-map-inner">
+          <img src="../img/complex_map.png" alt="Карта комплексу">
+        </div>
+      </div>
+
+      <!-- М'який зелений градієнт-перехід на Послуги -->
+      <div class="about-bottom-fade"></div>
+    </section>
+
+    <!-- ================= ПОСЛУГИ (3420px – 4533px) ================= -->
+    <section id="services" class="services-section">
+      <h2 class="services-main-title">Послуги</h2>
+      <p class="services-sub">
+        Ми надаємо повний комплекс послуг для вашої безпеки, зручності та щоденного спокою.
+      </p>
+
+      <div class="comfort-board">
+        <img src="../img/card_terraces.png" alt="" class="comfort-bg-img">
+        <div class="comfort-overlay"></div>
+
+        <h3 class="comfort-title"><strong>Комфорт</strong> <span>–</span> <strong>в одному місці</strong></h3>
+        <p class="comfort-desc">
+          Усе необхідне для комфортного життя – від комунальних платежів до замовлення послуг <br>та безпеки.
+        </p>
+
+        <!-- 3 картки: рамка стоїть на місці, при наведенні зумиться ТІЛЬКИ фото всередині -->
+        <div class="comfort-carousel carousel" data-carousel data-carousel-label="Інтер'єри">
+        <div class="comfort-grid carousel-track">
+          <div class="comfort-item">
+            <div class="comfort-img-mask">
+              <img src="../img/card_bath.png" alt="Ванна кімната">
+            </div>
+          </div>
+
+          <div class="comfort-item">
+            <div class="comfort-img-mask">
+              <img src="../img/card_living.png" alt="Вітальня">
+            </div>
+          </div>
+
+          <div class="comfort-item">
+            <div class="comfort-img-mask">
+              <img src="../img/card_kitchen.png" alt="Кухня">
+            </div>
+          </div>
+        </div>
+        <button type="button" class="carousel-btn carousel-btn--prev" aria-label="Попередній слайд"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button type="button" class="carousel-btn carousel-btn--next" aria-label="Наступний слайд"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        <div class="carousel-dots"></div>
+        </div>
+      </div>
+
+      <!-- Розмитий темний градієнт-перехід між Послуги та Наші переваги (як у Figma) -->
+      <div class="services-to-benefits-blur"></div>
+    </section>
+
+    <!-- ================= НАШІ ПЕРЕВАГИ (4533px – 5556px) ================= -->
+    <section class="benefits-section">
+      <img src="../img/leaf.png" alt="" class="b-leaf leaf-pos-1">
+      <img src="../img/leaf.png" alt="" class="b-leaf leaf-pos-2">
+      <img src="../img/leaf.png" alt="" class="b-leaf leaf-pos-3">
+      <img src="../img/leaf.png" alt="" class="b-leaf leaf-pos-4">
+      <img src="../img/leaf.png" alt="" class="b-leaf leaf-pos-5">
+      <img src="../img/leaf.png" alt="" class="b-leaf leaf-pos-6">
+      <img src="../img/leaf.png" alt="" class="b-leaf leaf-pos-7">
+      <img src="../img/leaf.png" alt="" class="b-leaf leaf-pos-8">
+      <img src="../img/leaf.png" alt="" class="b-leaf leaf-pos-9">
+
+      <h2 class="benefits-title">Наші переваги</h2>
+
+      <div class="benefits-row">
+        <article class="benefit-card">
+          <div class="benefit-icon">📊</div>
+          <h3>Облік комун. послуг</h3>
+          <p>Відстеження споживання комунальних <br>послуг у режимі реального часу та легка й <br>безпечна сплата рахунків одразу на сайті.</p>
+        </article>
+
+        <article class="benefit-card">
+          <div class="benefit-icon">🍀</div>
+          <h3>Безпека та благоустрій території</h3>
+          <p>Чиста прибудинкова територія, зелені зони <br>для прогулянок, сучасні майданчики та <br>надійна система безпеки для вашого <br>цілковитого спокою.</p>
+        </article>
+
+        <article class="benefit-card">
+          <div class="benefit-icon">⚡</div>
+          <h3>Оперативне реагування</h3>
+          <p>Швидке замовлення послуг та миттєва <br>допомога й відповідь на питання через <br>наш зручний онлайн-портал мешканця.</p>
+        </article>
+      </div>
+
+      <!-- Світлий розмитий перехід перед Відгуками -->
+      <div class="benefits-bottom-blur"></div>
+    </section>
+
+    <!-- ================= ВІДГУКИ + АКЦІЯ + FAQ + ФУТЕР (5556px – 8538px) ================= -->
+    <div class="lower-sections-wrapper">
+
+      <!-- ВІДГУКИ -->
+      <section class="reviews-section">
+        <!-- Заголовок "Відгуки" наполовину на зеленому фоні, наполовину на дереві -->
+        <h2 class="reviews-overlap-title">Відгуки</h2>
+
+        <div class="wood-board">
+          <div class="reviews-carousel carousel" data-carousel data-carousel-label="Відгуки мешканців">
+          <div class="reviews-track carousel-track">
+          <article class="review-left-card">
+            <img src="../img/child.png" alt="Дитина на майданчику" class="child-img">
+            <p class="review-quote-left">
+              «Вже більше року мешкаємо тут. Найбільше подобається доглянутість території та швидка допомога сантехніків. Завжди ввічливі і прибирають за собою. Сервіс на найвищому рівні!»
+            </p>
+            <div class="review-author-block">
+              <div class="author-name">Ольга та Андрій</div>
+              <div class="author-flat">квартира 45, корпус 2</div>
+            </div>
+          </article>
+
+          <!-- Права колонка (текст рівно в 3 рядки, імена не жирні) -->
+          <div class="reviews-right-col">
+            <article class="review-right-top">
+              <p class="review-quote-right">
+                «Комунальний кабінет - це просто спасіння. Оплачую всі рахунки<br>
+                за хвилину, передаю показники лічильників без стресу. Дякую за<br>
+                прозорість та дійсно сучасне рішення.»
+              </p>
+              <div class="review-divider"></div>
+              <div class="review-author-block">
+                <div class="author-name">Михайло К.</div>
+                <div class="author-flat">квартира 112, корпус 1</div>
+              </div>
+            </article>
+
+            <article class="review-right-bottom">
+              <p class="review-quote-right">
+                «Для мене головне - це безпека дітей. Територія закрита, камери<br>
+                працюють справно. Наші дитячі майданчики завжди доглянуті<br>
+                та безпечні. Чудове місце для затишного сімейного життя.»
+              </p>
+              <div class="review-divider"></div>
+              <div class="review-author-block">
+                <div class="author-name">Ірина Сергіївна</div>
+                <div class="author-flat">квартира 78, корпус 4</div>
+              </div>
+            </article>
+
+            <button type="button" class="btn-more-reviews">Читати більше</button>
+          </div>
+          </div>
+          <button type="button" class="carousel-btn carousel-btn--prev" aria-label="Попередній слайд"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" class="carousel-btn carousel-btn--next" aria-label="Наступний слайд"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+          <div class="carousel-dots"></div>
+          </div>
+        </div>
+
+        <!-- Гілка 1: виходить від лівого краю екрана між Відгуками і Бажаєте стати частиною, злегка налазить на Відгуки -->
+        <img src="../img/branch.png" alt="" class="branch-between-reviews-promo">
+      </section>
+
+      <!-- АКЦІЯ З ТАЙМЕРОМ -->
+      <section class="promo-section">
+        <div class="promo-content">
+          <div class="promo-text-side">
+            <h2>Бажаєте стати частиною нашої родини?</h2>
+            <p>Заповнюйте форму впродовж 15 хвилин і отримуйте знижку 10% <br>на будь-який вид житла!</p>
+            <button type="button" class="btn-become">
+              Стати мешканцем
+            </button>
+          </div>
+
+          <div class="timer-card">
+            <div class="timer-digits">
+              <span id="timerMinutes">10</span> : <span id="timerSeconds">34</span>
+            </div>
+            <div class="timer-labels">
+              <span>хв</span>
+              <span>сек</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ЧАСТІ ПИТАННЯ Й ВІДПОВІДІ (ВІДКРИВАЮТЬСЯ ПРИ НАВЕДЕННІ) -->
+      <section id="faq" class="faq-section">
+        <h2 class="faq-heading">Часті питання й відповіді</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-head">
+              <span>Як сплатити за послуги через кабінет?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9l7 7 7-7" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="faq-content">
+              <p>Вам потрібно увійти у свій Кабінет мешканця за допомогою пошти або застосунку "Дія", у вкладці "Послуги" обрати необхідний рахунок та здійснити оплату карткою будь-якого українського банку.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-head">
+              <span>Як швидко реагує аварійна служба на технічні заявки?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9l7 7 7-7" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="faq-content">
+              <p>Для термінових випадків аварійна бригада виїжджає миттєво та прибуває протягом 15 хвилин. Звичайні побутові заявки виконуються відповідно до обраного вами часу в календарі додатку.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-head">
+              <span>Які часи роботи головного офісу компанії?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9l7 7 7-7" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="faq-content">
+              <p>Наш центр обслуговування відкритий з понеділка по п'ятницю з 09:00 до 20:00, у суботу з 10:00 до 15:00. Неділя – вихідний день. Технічна підтримка в додатку працює цілодобово.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-head">
+              <span>Чи можна встановити власну систему розумного дому?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9l7 7 7-7" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="faq-content">
+              <p>Так, всі квартири повністю готові для інтеграції будь-яких сертифікованих рішень "Розумний Дім". Наші інженери можуть безкоштовно проконсультувати вас та допомогти підключити датчики до загальнобудинкової мережі безпеки.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Гілка 2: велика гілка справа від краю екрана, з'єднує Часті питання і Футер -->
+        <img src="../img/branch.png" alt="" class="branch-between-faq-footer">
+      </section>
+
+      <!-- ФУТЕР -->
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-top">
+            <div class="footer-brand">
+              <h3>GRAND HOME</h3>
+              <p>Дбаємо про затишок вашої оселі, безпеку території та зручність щоденного життя.</p>
+            </div>
+
+            <div class="footer-nav-col">
+              <h4>ПРОСТІР</h4>
+              <a href="#about">Про нас</a>
+              <a href="#services">Житловий фонд</a>
+              <a href="#services">Наші послуги</a>
+            </div>
+
+            <div class="footer-nav-col">
+              <h4>ДОПОМОГА</h4>
+              <a href="login_page.html">Кабінет мешканця</a>
+              <a href="#" class="open-modal-btn" data-subject="Зворотний зв'язок">Зворотний зв'язок</a>
+            </div>
+
+            <div class="footer-social-col">
+              <h4>МИ В СОЦМЕРЕЖАХ</h4>
+              <div class="social-row">
+                <!-- Instagram -->
+                <a href="#" aria-label="Instagram" class="soc-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </a>
+                <!-- TikTok -->
+                <a href="#" aria-label="TikTok" class="soc-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#FFFFFF">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                  </svg>
+                </a>
+                <!-- Telegram -->
+                <a href="#" aria-label="Telegram" class="soc-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="#FFFFFF">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-divider"></div>
+
+          <div class="footer-bottom">
+            <span>© 2026 GRAND HOME. Усі права захищені.</span>
+            <div class="footer-links">
+              <a href="#">Політика конфіденційності</a>
+              <a href="#">Умови використання</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <!-- МОДАЛЬНЕ ВІКНО -->
+  <div class="modal-backdrop" id="contactModal" aria-hidden="true">
+    <div class="modal-window">
+      <button type="button" class="modal-close" id="closeModalBtn" aria-label="Закрити">✕</button>
+      <h3 id="modalTitle">Залишити заявку</h3>
+      <p class="modal-desc">Заповніть коротку форму, і наш менеджер зв'яжеться з вами протягом 10 хвилин.</p>
+
+      <form id="leadForm" class="modal-form" novalidate>
+        <div class="field-group">
+          <label for="leadName">Ваше ім'я *</label>
+          <input type="text" id="leadName" placeholder="Введіть ім'я" required>
+          <span class="error-msg" id="nameError"></span>
+        </div>
+
+        <div class="field-group">
+          <label for="leadPhone">Номер телефону *</label>
+          <input type="tel" id="leadPhone" placeholder="+380 (__) ___-__-__" required>
+          <span class="error-msg" id="phoneError"></span>
+        </div>
+
+        <button type="submit" class="hero-btn modal-submit-btn">Надіслати</button>
+        <p class="form-success" id="formSuccess"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/golovna_page.js"></script>
+</body>
+</html>
