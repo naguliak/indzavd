@@ -1,0 +1,1064 @@
+/* =========================================================
+   ЗАГАЛЬНЕ (діє на всіх розмірах)
+   ========================================================= */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Помітний фокус для клавіатури (доступність) */
+a:focus-visible,
+button:focus-visible,
+.faq-item:focus-visible,
+.carousel-track:focus-visible {
+  outline: 3px solid #FFE9A8;
+  outline-offset: 3px;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-btn,
+  .carousel-dot::before,
+  .burger-btn span { transition: none; }
+  .nav-pill { animation: none; }
+  .carousel-track,
+  .about-gallery .carousel-track,
+  .comfort-carousel .comfort-grid,
+  .reviews-carousel .reviews-track { scroll-behavior: auto; }
+}
+
+/* Пункт «Кабінет мешканця» всередині меню — видно лише в бургері */
+.nav-link--cabinet { display: none; }
+
+/* ---------- Слайдер: за замовчуванням «невидимий» (десктоп) ----------*/
+.carousel { display: contents; }
+/* (.comfort-grid лишається звичайним flex-контейнером і на десктопі) */
+.about-gallery .carousel-track,
+.reviews-track { display: contents; }
+.carousel-btn,
+.carousel-dots { display: none; }
+
+.carousel-btn {
+  position: absolute;
+  top: calc(50% - 34px);
+  z-index: 6;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(36, 52, 2, 0.86);
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+.carousel-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.carousel-btn--prev { left: -8px; }
+.carousel-btn--next { right: -8px; }
+.carousel-btn:hover { background: #32451D; }
+.carousel-btn:active { transform: scale(0.94); }
+.carousel-btn:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.carousel-dots {
+  justify-content: center;
+  gap: 2px;
+  margin-top: 10px;
+}
+.carousel-dot {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  position: relative;
+}
+.carousel-dot::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.carousel-dot[aria-current="true"]::before {
+  background: #FFFFFF;
+  transform: scale(1.25);
+}
+
+/* Слайдер активний лише тоді, коли стрічка справді не вміщується */
+.carousel.is-scrollable > .carousel-btn { display: flex; }
+.carousel.is-scrollable > .carousel-dots { display: flex; }
+
+
+/* =========================================================
+   ЛАПТОП 1181 – 1439px: макет 1440 пропорційно зменшується
+   ========================================================= */
+@media (min-width: 1181px) and (max-width: 1439.98px) {
+  html.is-scaled .figma-canvas {
+    width: 1440px;
+    max-width: none;
+    margin: 0;
+    zoom: var(--ds, 1);
+  }
+
+ 
+  html.is-scaled .hero-bg-img,
+  html.is-scaled .hero-overlay,
+  html.is-scaled .about-stone-bg,
+  html.is-scaled .about-bottom-fade,
+  html.is-scaled .services-to-benefits-blur,
+  html.is-scaled .services-section::before,
+  html.is-scaled .benefits-section::before,
+  html.is-scaled .lower-sections-wrapper::before,
+  html.is-scaled .reviews-section::before,
+  html.is-scaled .site-footer::before {
+    width: calc(100vw / var(--ds, 1));
+  }
+
+  html.is-scaled .branch-between-reviews-promo {
+    --b1w: 1100px;
+    left: calc(50% - 50vw / var(--ds, 1));
+  }
+  html.is-scaled .branch-between-faq-footer { --b2w: 1196px; }
+  html.is-scaled .faq-section::after { max-width: none; }
+}
+
+
+/* =========================================================
+   ПЛАНШЕТ І НИЖЧЕ (≤ 1180px) 
+   ========================================================= */
+@media (max-width: 1180px) {
+
+  /* ---------- HERO ---------- */
+  .hero-section {
+    height: auto;
+    min-height: 760px;
+    min-height: min(100svh, 880px);
+    padding: 22px clamp(20px, 4vw, 48px) clamp(44px, 7vw, 80px);
+    display: grid;
+    grid-template-columns: max-content max-content 1fr;
+    grid-template-rows: auto 1fr auto auto auto;
+    column-gap: 16px;
+    align-items: start;
+  }
+
+  .hero-overlay { background: rgba(0, 0, 0, 0.22); }
+  .hero-bg-img { object-position: 52% 40%; }
+
+  /* Вертикальний екран: висока картинка будинку */
+  @media (orientation: portrait) {
+    .hero-bg-img { object-position: 50% 55%; }
+  }
+
+  .site-header {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: auto;
+    min-height: 56px;
+  }
+
+  .logo {
+    position: static;
+    font-size: clamp(22px, 3.2vw, 28px);
+    white-space: nowrap;
+  }
+
+  .nav-pill {
+    position: static;
+    width: auto;
+    height: 46px;
+    padding: 0 30px;
+    gap: clamp(20px, 3vw, 36px);
+    justify-content: center;
+  }
+  .nav-link { font-size: 18px; }
+
+  .cabinet-top-link {
+    position: static;
+    font-size: clamp(18px, 2.4vw, 22px);
+    white-space: nowrap;
+  }
+
+  .hero-title {
+    position: static;
+    grid-column: 1 / -1;
+    grid-row: 3;
+    width: 100%;
+    max-width: 820px;
+    font-size: clamp(38px, 8vw, 72px);
+    line-height: 1.1;
+    margin: 0 0 clamp(16px, 2.6vw, 24px);
+    text-wrap: balance;
+  }
+
+  .hero-subtitle {
+    position: static;
+    grid-column: 1 / -1;
+    grid-row: 4;
+    width: 100%;
+    max-width: 640px;
+    font-size: clamp(16px, 2.3vw, 21px);
+    line-height: 1.6;
+    margin: 0 0 clamp(24px, 4vw, 36px);
+  }
+
+  .hero-btn {
+    position: static;
+    width: auto;
+    min-width: 230px;
+    height: 58px;
+    padding: 0 28px;
+    font-size: clamp(17px, 2.2vw, 20px);
+  }
+  .btn-find    { grid-column: 1; grid-row: 5; }
+  .btn-contact { grid-column: 2; grid-row: 5; }
+
+
+  /* ---------- ПРО НАС ---------- */
+  .about-section {
+    --tl-x: 14px;               
+    height: auto;
+    padding: clamp(56px, 8vw, 88px) clamp(20px, 4vw, 48px) 150px calc(var(--tl-x) + 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(28px, 5vw, 44px);
+  }
+
+  /* Лінія часу: ліворуч, на всю висоту контенту */
+  .timeline-vertical {
+    left: var(--tl-x);
+    top: 120px;
+    bottom: 150px;
+    width: 4px;
+    height: auto;
+    border-radius: 4px;
+  }
+  .tl-dot { display: none; }
+
+  .about-title {
+    position: static;
+    font-size: clamp(34px, 8vw, 64px);
+    line-height: 1.05;
+    margin-left: -16px;          
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+  }
+
+  .about-text {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 62ch;
+    font-size: clamp(16px, 2.3vw, 20px);
+    line-height: 1.55;
+    text-align: left;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Крапки на лінії часу — біля кожного блоку */
+  .about-text::before,
+  .about-gallery::before,
+  .stats-card::before,
+  .polaroid-map::before {
+    content: "";
+    position: absolute;
+    left: -43px;
+    top: 7px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #9EAE7A;
+    box-shadow: 0 0 0 4px rgba(158, 174, 122, 0.3);
+  }
+
+  /* --- Галерея фото-карток: горизонтальний слайдер --- */
+  .about-gallery {
+    /* кнопки ‹ › — в окремих колонках ПО БОКАХ, а не поверх фото */
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) 38px;
+    grid-template-areas:
+      "prev track next"
+      ".    dots  .";
+    align-items: center;
+    column-gap: 8px;
+    position: relative;
+    width: 100%;
+    --gap: 16px;
+    --slide-w: calc((100% - 2 * var(--gap)) / 3);
+  }
+  .about-gallery::before { top: 40%; }
+
+  .about-gallery .carousel-track {
+    grid-area: track;
+    display: flex;
+    gap: var(--gap);
+    position: relative;
+    min-width: 0;
+    overflow-x: auto;
+    padding: 8px 4px 12px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+  .about-gallery .carousel-track::-webkit-scrollbar { display: none; }
+
+  /* Тонша «полароїдна» обводка: рамка менша, фото більше */
+  .about-gallery .polaroid-frame {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    flex: 0 0 var(--slide-w);
+    width: var(--slide-w);
+    height: auto;
+    aspect-ratio: 320 / 360;
+    padding: 8px 8px 30px;
+    border-radius: 16px;
+    scroll-snap-align: start;
+  }
+  .about-gallery > .carousel-btn {
+    position: static;
+    margin: 0;
+    width: 38px;
+    height: 38px;
+    justify-self: center;
+  }
+  .about-gallery > .carousel-btn svg { width: 18px; height: 18px; }
+  .about-gallery > .carousel-btn--prev { grid-area: prev; }
+  .about-gallery > .carousel-btn--next { grid-area: next; }
+  .about-gallery > .carousel-dots { grid-area: dots; }
+
+  /* --- Статистика і карта --- */
+  .stats-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    gap: 12px;
+  }
+  .stats-card::before { top: 30px; }
+  .stats-top { height: auto; padding: 18px 12px; }
+  .stats-top strong { font-size: clamp(38px, 9vw, 56px); }
+  .stats-top span { font-size: clamp(14px, 2.2vw, 18px); text-align: center; }
+  .stats-bottom { height: auto; gap: 12px; }
+  .stats-box-15 { width: auto; flex: 0 0 38%; padding: 14px 8px; }
+  .stats-box-5000 { padding: 14px 8px; }
+  .stats-box-15 strong,
+  .stats-box-5000 strong { font-size: clamp(36px, 8.4vw, 54px); }
+  .stats-box-15 span,
+  .stats-box-5000 span { font-size: clamp(13px, 2vw, 17px); line-height: 1.2; }
+
+  .polaroid-map {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    aspect-ratio: 445 / 326;
+    padding: 14px;
+  }
+  .polaroid-map::before { top: 40px; }
+
+  .about-bottom-fade { height: 150px; }
+
+
+  /* ---------- ПОСЛУГИ ---------- */
+  .services-section {
+    height: auto;
+    padding: clamp(40px, 6vw, 64px) clamp(16px, 4vw, 40px) 130px;
+  }
+  .services-main-title {
+    font-size: clamp(36px, 8vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+  .services-sub {
+    font-size: clamp(16px, 2.5vw, 22px);
+    line-height: 1.45;
+    max-width: 640px;
+    margin: 0 auto 32px;
+  }
+
+  .comfort-board {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: clamp(28px, 5vw, 52px) clamp(18px, 4vw, 44px) clamp(28px, 4vw, 44px);
+    border-radius: 28px;
+  }
+  .comfort-title {
+    font-size: clamp(22px, 4.6vw, 40px);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .comfort-desc {
+    font-size: clamp(15px, 2.4vw, 22px);
+    margin-bottom: 26px;
+  }
+  .comfort-desc br { display: none; }
+
+  /* «Комфорт»: стрічка карток, кнопки ‹ › — ПО БОКАХ від фото (а не поверх них).
+     Планшет — 2 картки в кадрі, третя відкривається гортанням/кнопкою. */
+  .comfort-carousel {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr) 52px;
+    grid-template-areas:
+      "prev track next"
+      ".    dots  .";
+    align-items: center;
+    column-gap: 12px;
+    position: relative;
+    z-index: 3;
+  }
+  .comfort-carousel .comfort-grid {
+    grid-area: track;
+    display: flex;
+    gap: 18px;
+    position: relative;
+    min-width: 0;
+    overflow-x: auto;
+    padding: 6px 2px 10px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .comfort-carousel .comfort-grid::-webkit-scrollbar { display: none; }
+  .comfort-carousel .comfort-item {
+    flex: 0 0 calc((100% - 18px) / 2);
+    width: auto;
+    min-width: 0;
+    height: auto;
+    aspect-ratio: 380 / 418;
+    padding: 9px;
+    border-radius: 20px;
+    scroll-snap-align: start;
+  }
+  .comfort-carousel > .carousel-btn {
+    position: static;
+    margin: 0;
+    width: 52px;
+    height: 52px;
+    justify-self: center;
+  }
+  .comfort-carousel > .carousel-btn--prev { grid-area: prev; }
+  .comfort-carousel > .carousel-btn--next { grid-area: next; }
+  .comfort-carousel > .carousel-dots { grid-area: dots; }
+
+  .services-to-benefits-blur { height: 120px; }
+
+
+  /* ---------- ПЕРЕВАГИ ---------- */
+  .benefits-section {
+    height: auto;
+    min-height: 0;
+    padding: clamp(80px, 11vw, 130px) clamp(20px, 4vw, 40px) clamp(90px, 12vw, 130px);
+  }
+  .benefits-title {
+    font-size: clamp(34px, 7.6vw, 72px);
+    line-height: 1.05;
+    margin-bottom: clamp(36px, 6vw, 60px);
+  }
+  .benefits-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 3vw, 36px);
+  }
+  .benefit-card { align-items: center; text-align: center; }
+  .benefit-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    font-size: 30px;
+    margin-bottom: 16px;
+  }
+  .benefit-card h3 {
+    font-size: clamp(18px, 2.6vw, 24px);
+    margin-bottom: 10px;
+    text-wrap: balance;
+  }
+  .benefit-card p {
+    font-size: clamp(14px, 1.9vw, 17px);
+    line-height: 1.5;
+    max-width: 360px;
+  }
+  .benefit-card p br { display: none; }
+
+  .b-leaf { filter: none; }
+  .leaf-pos-1 { width: clamp(56px, 9vw, 94px);  left: -14px; top: 18px; }
+  .leaf-pos-2,
+  .leaf-pos-4,
+  .leaf-pos-6,
+  .leaf-pos-8 { display: none; }
+  .leaf-pos-3 { width: clamp(80px, 14vw, 150px); right: -26px; top: 10px; left: auto; }
+  .leaf-pos-5 { width: clamp(70px, 12vw, 130px); left: -24px; top: auto; bottom: 24px; }
+  .leaf-pos-7 { width: clamp(80px, 13vw, 150px); left: auto; right: 6%; top: auto; bottom: 36px; }
+  .leaf-pos-9 { width: clamp(44px, 7vw, 70px);   right: -12px; top: auto; bottom: 150px; }
+
+
+  /* ---------- ВІДГУКИ ---------- */
+  .reviews-section {
+    height: auto;
+    padding: clamp(50px, 7vw, 76px) clamp(16px, 4vw, 40px) clamp(200px, 30vw, 300px);
+  }
+  .reviews-overlap-title {
+    position: relative;
+    left: auto;
+    top: auto;
+    font-size: clamp(34px, 8vw, 72px);
+    line-height: 1;
+    margin: 0 0 -0.4em 0.18em;
+  }
+
+  .wood-board {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: clamp(56px, 8vw, 84px) clamp(16px, 3.4vw, 40px) clamp(20px, 3vw, 36px);
+    border-radius: 22px;
+    display: block;
+  }
+  .reviews-track {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Ліва картка: горизонтальна (фото + текст) */
+  .review-left-card {
+    display: grid;
+    grid-template-columns: minmax(0, 40%) minmax(0, 1fr);
+    grid-template-areas: "img quote" "img author";
+    column-gap: 24px;
+    row-gap: 14px;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 22px;
+  }
+  .child-img {
+    grid-area: img;
+    align-self: center;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 325 / 238;
+  }
+  .review-quote-left {
+    grid-area: quote;
+    align-self: end;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .review-left-card .review-author-block {
+    grid-area: author;
+    align-self: start;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Праві картки: 2 колонки + кнопка */
+  .reviews-right-col {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .review-right-top,
+  .review-right-bottom {
+    height: auto;
+    min-height: 0;
+    padding: 24px 24px 22px;
+    gap: 16px;
+  }
+  .review-quote-right { font-size: 15px; line-height: 1.6; }
+  .review-quote-right br { display: none; }
+  .btn-more-reviews {
+    grid-column: 1 / -1;
+    justify-self: end;
+    height: 56px;
+    margin: 0;
+  }
+
+
+  /* ---------- АКЦІЯ ---------- */
+  .promo-section {
+    height: auto;
+    padding: clamp(130px, 18vw, 170px) clamp(20px, 5vw, 56px) clamp(50px, 7vw, 70px);
+  }
+  .promo-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+  }
+  .promo-text-side h2 {
+    font-size: clamp(26px, 4.4vw, 38px);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .promo-text-side p {
+    font-size: clamp(16px, 2.4vw, 22px);
+    line-height: 1.45;
+    margin-bottom: 26px;
+  }
+  .promo-text-side p br { display: none; }
+  .btn-become {
+    width: 260px;
+    height: 64px;
+    font-size: 20px;
+  }
+  .timer-card {
+    position: static;
+    width: 230px;
+    height: 104px;
+  }
+  .timer-digits { font-size: 54px; }
+  .timer-labels { font-size: 22px; width: 144px; }
+
+
+  /* ---------- FAQ ---------- */
+  .faq-section {
+    height: auto;
+    padding: 10px clamp(16px, 4vw, 40px) clamp(300px, 46vw, 460px);
+  }
+  .faq-heading {
+    font-size: clamp(34px, 7vw, 64px);
+    line-height: 1.12;
+    margin-bottom: clamp(28px, 5vw, 48px);
+  }
+  .faq-list { width: 100%; max-width: 860px; margin: 0 auto; gap: 12px; }
+  .faq-item { padding: 20px clamp(18px, 3vw, 30px); border-radius: 18px; }
+  .faq-head {
+    font-size: clamp(16px, 2.4vw, 20px);
+    line-height: 1.35;
+    gap: 16px;
+  }
+  .faq-content p { font-size: clamp(15px, 2.1vw, 17px); }
+
+  /* Гілка 2 і її тінь — менші й притиснуті до футера */
+  .branch-between-faq-footer { --b2w: min(900px, 96vw); }
+  .faq-section::after {
+    right: 0;
+    width: 90vw;
+    max-width: 90vw;
+    height: 110px;
+    bottom: 0;
+  }
+
+
+  /* ---------- ФУТЕР ---------- */
+  .site-footer {
+    height: auto;
+    min-height: 0;
+    padding: 64px clamp(20px, 5vw, 56px) 34px;
+  }
+  .footer-inner { width: 100%; max-width: none; margin: 0 auto; }
+  .footer-top {
+    height: auto;
+    grid-template-columns: 1.7fr 1fr 1fr 1.3fr;
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+  .footer-brand p { font-size: 16px; line-height: 1.5; }
+  .footer-nav-col a,
+  .footer-social-col a { padding: 3px 0; }
+  .footer-bottom { height: auto; gap: 16px; flex-wrap: wrap; }
+  .footer-links { gap: 28px; flex-wrap: wrap; }
+
+
+  /* ---------- Модальне вікно ---------- */
+  .modal-window {
+    max-height: calc(100vh - 40px);
+    max-height: calc(100dvh - 40px);
+    overflow-y: auto;
+  }
+}
+
+
+/* Планшет: блок статистики і карта комплексу — поруч, а не стовпчиком */
+@media (min-width: 601px) and (max-width: 1180px) {
+  .about-section { flex-direction: row; flex-wrap: wrap; align-content: flex-start; }
+  .about-title,
+  .about-text,
+  .about-gallery { flex: 0 0 100%; }
+  .stats-card,
+  .polaroid-map {
+    flex: 1 1 calc(50% - 22px);
+    width: auto;
+    max-width: none;
+    align-self: flex-start;
+  }
+  .polaroid-map::before { display: none; }
+
+  /* Картка стала вдвічі вужчою — цифри дрібніші, щоб «75 000+ м²» не переносилось */
+  .stats-top strong { font-size: clamp(28px, 4.6vw, 46px); white-space: nowrap; }
+  .stats-box-15 strong,
+  .stats-box-5000 strong { font-size: clamp(28px, 4.4vw, 42px); }
+}
+
+
+/* Планшет у вертикальному положенні: та сама схема, що й на телефоні —
+   висока картинка будинку цілком, на всю ширину, без обрізання; текст нижче будинку */
+@media (min-width: 601px) and (max-width: 1180px) and (orientation: portrait) {
+  .hero-section {
+    --img-h: 143.96vw;
+    background: #222422;
+    min-height: 0;
+    grid-template-rows: auto calc(var(--img-h) * 0.79 - 84px) auto auto auto;
+  }
+  .hero-bg-img {
+    height: auto;
+    -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+  }
+}
+
+
+/* =========================================================
+   БУРГЕР-МЕНЮ (≤ 899px: планшет вертикально та телефон)
+   ========================================================= */
+@media (max-width: 899px) {
+  .cabinet-top-link { display: none; }
+
+  .burger-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 48px;
+    height: 48px;
+    margin-right: -8px;
+    border-radius: 14px;
+    background: rgba(50, 69, 29, 0.55);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+    z-index: 12;
+  }
+  .burger-btn span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    border-radius: 3px;
+    background: #FFFFFF;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+  .burger-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+  .burger-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .burger-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+  /* Випадаюча панель меню */
+  .nav-pill {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    z-index: 11;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 12px;
+    border-radius: 26px;
+    background: #6B8E23;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+    transform-origin: top right;
+    animation: navIn 0.2s ease;
+  }
+  .nav-pill.open { display: flex; }
+
+  .nav-link {
+    display: block;
+    padding: 15px 18px;
+    border-radius: 16px;
+    font-size: 20px;
+    text-underline-offset: 6px;
+  }
+  .nav-link:hover,
+  .nav-link:active { background: rgba(255, 255, 255, 0.14); text-decoration: none; }
+
+  .nav-link--cabinet {
+    display: block;
+    margin-top: 6px;
+    background: #32451D;
+    text-align: center;
+  }
+  .nav-link--cabinet:hover,
+  .nav-link--cabinet:active { background: #243402; }
+
+  @keyframes navIn {
+    from { opacity: 0; transform: translateY(-6px) scale(0.98); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* Планшет вертикально: «Відгуки» — слайдер так само, як на телефоні не потрібен,
+     але футер і галерея вже у 2 колонки */
+  .about-gallery { --slide-w: calc((100% - var(--gap)) / 2); }
+
+  .footer-top { grid-template-columns: 1fr 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+
+
+  .benefits-row { gap: 14px; }
+}
+
+
+/* Акція: у стовпчик лише на вузьких екранах */
+@media (max-width: 699px) {
+  .promo-content { flex-direction: column; align-items: center; text-align: center; }
+  .promo-text-side { display: flex; flex-direction: column; align-items: center; }
+}
+
+
+/* =========================================================
+   ТЕЛЕФОН (≤ 600px)
+   ========================================================= */
+@media (max-width: 600px) {
+
+  .hero-section {
+    min-height: 600px;
+    padding: 16px 18px 34px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto auto auto auto;
+  }
+  .hero-title { font-size: clamp(30px, 8.8vw, 42px); }
+  .hero-subtitle { font-size: 15px; line-height: 1.55; margin-bottom: 22px; }
+  .btn-find    { grid-column: 1; grid-row: 5; margin-bottom: 12px; }
+  .btn-contact { grid-column: 1; grid-row: 6; }
+  .hero-btn { width: 100%; min-width: 0; height: 54px; }
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+  .hero-section {
+    --img-h: 143.96vw;            
+    background: #222422;
+    min-height: 0;
+    grid-template-rows: auto calc(var(--img-h) * 0.79 - 74px) auto auto auto auto;
+  }
+  .hero-bg-img {
+    height: auto;                 
+    -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+  }
+}
+
+@media (max-width: 600px) {
+
+  /* ---------- ПРО НАС ---------- */
+  .about-section {
+    --tl-x: 8px;
+    padding: 48px 16px 130px calc(var(--tl-x) + 34px);
+    gap: 26px;
+  }
+  .timeline-vertical { top: 100px; bottom: 130px; width: 3px; }
+  .about-title { margin-left: -12px; }
+  .about-text::before,
+  .about-gallery::before,
+  .stats-card::before,
+  .polaroid-map::before {
+    left: -37px;
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Галерея: по одній картці з «підглядом» наступної */
+  .about-gallery {
+    grid-template-columns: 34px minmax(0, 1fr) 34px;
+    column-gap: 6px;
+    --gap: 12px;
+    --slide-w: 100%;                
+  }
+  .about-gallery .polaroid-frame { padding: 7px 7px 26px; border-radius: 14px; }
+  .about-gallery > .carousel-btn { width: 34px; height: 34px; }
+  .about-gallery > .carousel-btn svg { width: 16px; height: 16px; }
+
+  .stats-card { max-width: none; border-radius: 24px; padding: 12px; }
+  .polaroid-map { max-width: none; border-radius: 24px; padding: 12px; }
+
+
+  /* ---------- ПОСЛУГИ: слайдер з трьох карток ---------- */
+  .services-section { padding: 36px 14px 110px; }
+  .comfort-board { border-radius: 24px; padding: 28px 10px 22px; }
+  .comfort-title, .comfort-desc { padding-inline: 6px; }
+
+  /* Телефон: ОДНА картка в кадрі, зліва й справа — кнопки ‹ › */
+  .comfort-carousel { grid-template-columns: 44px minmax(0, 1fr) 44px; column-gap: 6px; }
+  .comfort-carousel .comfort-grid { gap: 14px; }
+  .comfort-carousel .comfort-item { flex: 0 0 100%; }
+  .comfort-carousel > .carousel-btn { width: 44px; height: 44px; }
+
+
+  /* ---------- ПЕРЕВАГИ: картки одна під одною ---------- */
+  .benefits-row { grid-template-columns: 1fr; gap: 38px; }
+  .benefit-card p { max-width: 320px; }
+  .leaf-pos-9 { display: none; }
+
+
+  /* ---------- ВІДГУКИ: слайдер, один відгук на екран ---------- */
+  .reviews-section { padding: 44px 14px 190px; }
+  .wood-board { padding: 54px 14px 18px; border-radius: 20px; }
+
+  .reviews-carousel {
+    display: block;
+    position: relative;
+  }
+  .reviews-carousel .reviews-track {
+    position: relative;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 14px;
+    overflow-x: auto;
+    padding: 2px;
+    margin: -2px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .reviews-carousel .reviews-track::-webkit-scrollbar { display: none; }
+
+  /* права колонка «розчиняється» — всі відгуки стають слайдами однієї стрічки */
+  .reviews-right-col { display: contents; }
+
+  .reviews-track > .review-left-card,
+  .reviews-track .review-right-top,
+  .reviews-track .review-right-bottom {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: start;
+  }
+
+  .btn-more-reviews { display: none; }
+
+  .review-left-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .child-img { display: none; }               /* на телефоні — компактні текстові картки, що гортаються */
+  .review-quote-left { margin-top: 0; font-size: 17px; line-height: 1.6; }
+  .review-left-card .review-author-block { margin-top: auto; padding-top: 18px; }
+
+  .review-left-card,
+  .review-right-top,
+  .review-right-bottom { padding: 26px 22px 22px; min-height: 280px; }
+  .review-quote-right { font-size: 17px; line-height: 1.6; }
+  .review-divider { display: block; }
+
+  /* Для відгуків стрілки й крапки — під стрічкою, в один ряд */
+  .reviews-carousel.is-scrollable > .carousel-btn {
+    position: absolute;
+    top: auto;
+    bottom: -4px;
+    width: 42px;
+    height: 42px;
+  }
+  .reviews-carousel .carousel-btn--prev { left: 6px; }
+  .reviews-carousel .carousel-btn--next { right: 6px; }
+  .reviews-carousel.is-scrollable { padding-bottom: 54px; }
+  .reviews-carousel .carousel-dots {
+    position: absolute;
+    left: 56px;
+    right: 56px;
+    bottom: 6px;
+    margin: 0;
+    height: 38px;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+
+  /* ---------- АКЦІЯ ---------- */
+  .promo-section { padding: 120px 18px 44px; }
+  .promo-text-side h2 { font-size: 26px; }
+  .promo-text-side p { font-size: 16px; }
+  .btn-become { width: 100%; max-width: 360px; height: 60px; }
+  /* Компактний таймер для телефона */
+  .timer-card {
+    width: 190px;
+    max-width: 100%;
+    height: 80px;
+    border-radius: 16px;
+  }
+  .timer-digits { font-size: 36px; }
+  .timer-labels { width: 112px; font-size: 15px; margin-top: 1px; }
+
+
+  /* ---------- FAQ ---------- */
+  .faq-section { padding: 6px 14px 280px; }
+  .faq-heading { font-size: clamp(30px, 9vw, 38px); }
+  .faq-item { padding: 18px 18px; }
+  .faq-icon { width: 24px; height: 24px; }
+  .branch-between-faq-footer { --b2w: 118vw; }
+  .faq-section::after { height: 80px; }
+
+
+  /* ---------- ФУТЕР ---------- */
+  .site-footer { padding: 52px 20px 28px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 28px 20px; margin-bottom: 30px; }
+  .footer-brand,
+  .footer-social-col { grid-column: 1 / -1; }
+  .footer-brand h3 { font-size: 22px; }
+  .footer-nav-col a { padding: 6px 0; }          /* зручна ціль для пальця */
+  .social-row { gap: 22px; }
+  .soc-icon { padding: 8px; margin: -8px; }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 13px;
+  }
+  .footer-links { flex-direction: column; gap: 8px; }
+
+
+  /* ---------- Модальне вікно ---------- */
+  .modal-backdrop { padding: 14px; align-items: flex-end; }
+  .modal-window { padding: 28px 20px 22px; border-radius: 24px; }
+  .field-group input { height: 52px; font-size: 16px; } /* 16px — iOS не наближає екран при фокусі */
+}
+
+
+/* Дуже вузькі телефони (≤ 360px) */
+@media (max-width: 360px) {
+  .nav-link { font-size: 18px; }
+  .hero-title { font-size: 32px; }
+  .timer-digits { font-size: 32px; }
+}
+
+
+@media (max-height: 520px) and (orientation: landscape) and (max-width: 1180px) {
+  .hero-section { min-height: 520px; }
+  .hero-title { font-size: clamp(28px, 5vw, 42px); }
+}
