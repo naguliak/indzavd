@@ -141,7 +141,7 @@ body {
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: scale(1.05);
   background-position: 100% 0%;
   opacity: 0.95;
 }
