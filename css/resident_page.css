@@ -146,7 +146,7 @@ a {
 
 .services {
   display: flex;
-  gap: 24px;
+  gap: 30px;
   margin-top: 25px;
 }
 
@@ -630,7 +630,7 @@ main > section:first-child {
   background: rgba(220, 160, 2, 0.95);
 }
 
-/* Листя декоративне */
+/* Листя */
 .page-leaf {
   position: absolute;
   z-index: 2;
@@ -641,7 +641,7 @@ main > section:first-child {
 
 .pl-1 { left: calc(50% - 574.99px); top: 1037.43px; width: 126.56px; height: 127.83px; transform: rotate(92.874deg); }
 .pl-2 { left: calc(50% + 575.87px); top: 1270.49px; width: 84.71px; height: 85.56px; transform: rotate(-93.298deg); }
-.pl-3 { left: calc(50% + 561.17px); top: 510px; width: 129.44px; height: 130.74px; transform: rotate(14.695deg); }
+.pl-3 { left: calc(50% + 561.17px); top: 510px; width: 129.44px; height: 145.74px; transform: rotate(14.695deg); }
 .pl-4 { left: calc(50% + 169px); top: 1950.38px; width: 57.7px; height: 58.28px; transform: rotate(-0.373deg); }
 .pl-5 { left: calc(50% - 214.62px); top: 2240.31px; width: 57.7px; height: 58.28px; transform: rotate(-96.544deg); }
 .pl-6 { left: calc(50% - 675.24px); top: 2040.05px; width: 142.67px; height: 144.1px; transform: rotate(-81.973deg); }
@@ -778,6 +778,11 @@ main > section:first-child {
     height: auto;
     min-height: auto;
   }
+
+  .container {
+    max-width: calc(100% - 80px);
+  }
+
 }
 
 @media (max-width: 1023px) {
@@ -785,7 +790,25 @@ main > section:first-child {
     display: none;
   }
 }
+@media (min-width: 768px) {
+  .hero {
+    min-height: 32.43vw;
+  }
 
+  .hero-bg {
+    height: 32.43vw;
+    max-height: none;
+  }
+
+  .hero-bg img {
+    position: absolute;
+    left: -2.014vw;
+    top: -27.64vw;
+    width: 102.014vw;
+    max-width: none;
+    height: auto;
+  }
+}
 /* Tablet (768px – 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .container {
