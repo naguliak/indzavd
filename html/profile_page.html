@@ -1,67 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GRAND HOME — Профіль мешканця</title>
-  <link rel="stylesheet" href="../css/profile_page.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRAND HOME — Профіль мешканця</title>
+    <link rel="stylesheet" href="../css/profile_page.css" />
+  </head>
+  <body>
+    <div class="profile-page">
+      <!-- Декоративне листя -->
+      <img src="../img/leaf.png" alt="" class="bg-leaf leaf-1" />
+      <img src="../img/leaf.png" alt="" class="bg-leaf leaf-2" />
+      <img src="../img/leaf.png" alt="" class="bg-leaf leaf-3" />
+      <img src="../img/leaf.png" alt="" class="bg-leaf leaf-4" />
+      <img src="../img/leaf.png" alt="" class="bg-leaf leaf-5" />
+      <img src="../img/leaf.png" alt="" class="bg-leaf leaf-6" />
+      <img src="../img/leaf.png" alt="" class="bg-leaf leaf-7" />
+      <img src="../img/leaf.png" alt="" class="bg-leaf leaf-8" />
 
-  <div class="profile-page">
-    <!-- Декоративне листя -->
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-1">
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-2">
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-3">
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-4">
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-5">
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-6">
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-7">
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-8">
+      <!-- Повернутися назад у кабінет -->
+      <a
+        href="golovna_page.html"
+        class="logout-btn"
+        aria-label="Вийти на головну"
+      >
+        <!-- Планшет і телефон: у макеті тут інша іконка -->
+        <svg
+          class="back-chevron"
+          viewBox="0 0 36 62"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M30.375 5.625 L5.625 31 L30.375 56.375"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="11.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <svg class="logout-icon" viewBox="20 20 64 62" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M70.9623 82C74.4201 82 77.7363 80.6182 80.1814 78.1586C82.6264 75.699 84 72.363 84 68.8846L84 33.1154C84 29.637 82.6264 26.301 80.1814 23.8414C77.7363 21.3818 74.4201 20 70.9623 20L42.5165 20C41.5735 20 40.669 20.3769 40.0022 21.0477C39.3354 21.7185 38.9608 22.6283 38.9608 23.5769C38.9608 24.5256 39.3354 25.4354 40.0022 26.1062C40.669 26.777 41.5735 27.1538 42.5165 27.1538L70.9623 27.1538C74.2336 27.1538 76.8885 29.8246 76.8885 33.1154L76.8885 68.8846C76.8885 72.1754 74.2336 74.8462 70.9623 74.8462L42.5165 74.8462C41.5735 74.8462 40.669 75.223 40.0022 75.8938C39.3354 76.5646 38.9608 77.4744 38.9608 78.4231C38.9608 79.3717 39.3354 80.2815 40.0022 80.9523C40.669 81.6231 41.5735 82 42.5165 82L70.9623 82ZM34.0776 66.6431C34.4031 66.9945 34.7956 67.2764 35.2318 67.4719C35.668 67.6674 36.1388 67.7725 36.6162 67.781C37.0937 67.7894 37.5679 67.7011 38.0107 67.5212C38.4534 67.3413 38.8556 67.0735 39.1932 66.7339C39.5309 66.3942 39.7971 65.9896 39.9759 65.5442C40.1547 65.0988 40.2426 64.6218 40.2341 64.1415C40.2257 63.6612 40.1212 63.1876 39.9269 62.7488C39.7325 62.3101 39.4523 61.9152 39.103 61.5877L32.1338 54.5769L59.1099 54.5769C60.0529 54.5769 60.9573 54.2001 61.6242 53.5293C62.291 52.8585 62.6656 51.9487 62.6656 51C62.6656 50.0513 62.291 49.1415 61.6242 48.4707C60.9573 47.7999 60.0529 47.4231 59.1099 47.4231L32.1338 47.4231L39.103 40.4123C39.4523 40.0848 39.7325 39.6899 39.9269 39.2512C40.1212 38.8124 40.2257 38.3388 40.2341 37.8585C40.2426 37.3782 40.1547 36.9012 39.9759 36.4558C39.7971 36.0104 39.5309 35.6058 39.1932 35.2661C38.8556 34.9265 38.4534 34.6587 38.0107 34.4788C37.5679 34.2989 37.0937 34.2105 36.6162 34.219C36.1388 34.2275 35.668 34.3326 35.2318 34.5281C34.7956 34.7236 34.4031 35.0055 34.0776 35.3569L21.0399 48.4723C20.374 49.143 20 50.0521 20 51C20 51.9479 20.374 52.857 21.0399 53.5277L34.0776 66.6431Z"
+          />
+        </svg>
+      </a>
 
-    <!-- Повернутися назад у кабінет -->
-    <a href="resident_page.html" class="logout-btn" aria-label="Повернутися в кабінет">
-      <!-- Планшет і телефон: у макеті тут інша іконка -->
-      <svg class="back-chevron" viewBox="0 0 36 62" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M30.375 5.625 L5.625 31 L30.375 56.375" fill="none" stroke="currentColor" stroke-width="11.25" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <svg class="logout-icon" viewBox="20 20 64 62" aria-hidden="true">
-        <path fill="currentColor" d="M70.9623 82C74.4201 82 77.7363 80.6182 80.1814 78.1586C82.6264 75.699 84 72.363 84 68.8846L84 33.1154C84 29.637 82.6264 26.301 80.1814 23.8414C77.7363 21.3818 74.4201 20 70.9623 20L42.5165 20C41.5735 20 40.669 20.3769 40.0022 21.0477C39.3354 21.7185 38.9608 22.6283 38.9608 23.5769C38.9608 24.5256 39.3354 25.4354 40.0022 26.1062C40.669 26.777 41.5735 27.1538 42.5165 27.1538L70.9623 27.1538C74.2336 27.1538 76.8885 29.8246 76.8885 33.1154L76.8885 68.8846C76.8885 72.1754 74.2336 74.8462 70.9623 74.8462L42.5165 74.8462C41.5735 74.8462 40.669 75.223 40.0022 75.8938C39.3354 76.5646 38.9608 77.4744 38.9608 78.4231C38.9608 79.3717 39.3354 80.2815 40.0022 80.9523C40.669 81.6231 41.5735 82 42.5165 82L70.9623 82ZM34.0776 66.6431C34.4031 66.9945 34.7956 67.2764 35.2318 67.4719C35.668 67.6674 36.1388 67.7725 36.6162 67.781C37.0937 67.7894 37.5679 67.7011 38.0107 67.5212C38.4534 67.3413 38.8556 67.0735 39.1932 66.7339C39.5309 66.3942 39.7971 65.9896 39.9759 65.5442C40.1547 65.0988 40.2426 64.6218 40.2341 64.1415C40.2257 63.6612 40.1212 63.1876 39.9269 62.7488C39.7325 62.3101 39.4523 61.9152 39.103 61.5877L32.1338 54.5769L59.1099 54.5769C60.0529 54.5769 60.9573 54.2001 61.6242 53.5293C62.291 52.8585 62.6656 51.9487 62.6656 51C62.6656 50.0513 62.291 49.1415 61.6242 48.4707C60.9573 47.7999 60.0529 47.4231 59.1099 47.4231L32.1338 47.4231L39.103 40.4123C39.4523 40.0848 39.7325 39.6899 39.9269 39.2512C40.1212 38.8124 40.2257 38.3388 40.2341 37.8585C40.2426 37.3782 40.1547 36.9012 39.9759 36.4558C39.7971 36.0104 39.5309 35.6058 39.1932 35.2661C38.8556 34.9265 38.4534 34.6587 38.0107 34.4788C37.5679 34.2989 37.0937 34.2105 36.6162 34.219C36.1388 34.2275 35.668 34.3326 35.2318 34.5281C34.7956 34.7236 34.4031 35.0055 34.0776 35.3569L21.0399 48.4723C20.374 49.143 20 50.0521 20 51C20 51.9479 20.374 52.857 21.0399 53.5277L34.0776 66.6431Z"/>
-      </svg>
-    </a>
+      <!-- Картка профілю: блоки йдуть один за одним (flex) -->
+      <main class="profile-card">
+        <!-- Фото: при наведенні фото трохи збільшується -->
+        <div class="profile-photo">
+          <img src="../img/user.png" alt="Фото користувача" />
+        </div>
 
-    <!-- Картка профілю: блоки йдуть один за одним (flex) -->
-    <main class="profile-card">
+        <h1 class="profile-name">Liana Koshevich</h1>
 
-      <!-- Фото: при наведенні фото трохи збільшується -->
-      <div class="profile-photo">
-        <img src="../img/user.png" alt="Фото користувача">
-      </div>
+        <div class="profile-field">
+          <label class="field-label" for="nick">Нік</label>
+          <input
+            class="field-input"
+            type="text"
+            id="nick"
+            value="@koshevich_li"
+            readonly
+          />
+        </div>
 
-      <h1 class="profile-name">Liana Koshevich</h1>
+        <div class="profile-field">
+          <label class="field-label" for="email">Пошта</label>
+          <input
+            class="field-input field-email"
+            type="email"
+            id="email"
+            value="koshevich26@gmail.com"
+            readonly
+          />
+        </div>
 
-      <div class="profile-field">
-        <label class="field-label" for="nick">Нік</label>
-        <input class="field-input" type="text" id="nick" value="@koshevich_li" readonly>
-      </div>
+        <div class="profile-field profile-field-address">
+          <label class="field-label" for="address"
+            >Номер будинку та квартири</label
+          >
+          <input
+            class="field-input"
+            type="text"
+            id="address"
+            value="буд. B4, кв. 145"
+            readonly
+          />
+        </div>
 
-      <div class="profile-field">
-        <label class="field-label" for="email">Пошта</label>
-        <input class="field-input field-email" type="email" id="email" value="koshevich26@gmail.com" readonly>
-      </div>
-
-      <div class="profile-field profile-field-address">
-        <label class="field-label" for="address">Номер будинку та квартири</label>
-        <input class="field-input" type="text" id="address" value="буд. B4, кв. 145" readonly>
-      </div>
-
-      <div class="profile-buttons">
-        <button type="button" class="profile-btn profile-btn-edit">Редагувати</button>
-        <a href="resident_page.html" class="profile-btn profile-btn-back">Повернутися назад</a>
-      </div>
-
-    </main>
-  </div>
-
-</body>
+        <div class="profile-buttons">
+          <button type="button" class="profile-btn profile-btn-edit">
+            Редагувати
+          </button>
+          <a href="resident_page.html" class="profile-btn profile-btn-back"
+            >Повернутися назад</a
+          >
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
