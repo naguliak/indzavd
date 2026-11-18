@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentDate = new Date();
 
-  // Автоматичне оновлення дати та часу (сьогодні)
+  // Оновлення дати
   if (lastUpdatedEl) {
     const now = new Date();
     const day = String(now.getDate()).padStart(2, '0');
@@ -32,13 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
       monthYearEl.textContent = `${monthNames[month]} ${year}`;
     }
 
-    // Вираховуємо перший день тижня (Пн = 0, Нд = 6)
+    // Перший день тижня пн=0
     const firstDayIndex = (new Date(year, month, 1).getDay() + 6) % 7;
     const daysInMonth = new Date(year, month + 1, 0).getDate();
 
     daysContainer.innerHTML = '';
 
-    // Пусті клітинки для зміщення початку місяця
+    // Пусті клітинки 
     for (let i = 0; i < firstDayIndex; i++) {
       const emptyCell = document.createElement('i');
       emptyCell.style.visibility = 'hidden';
@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
       daysContainer.appendChild(emptyCell);
     }
 
-    // Приклад кольорів для днів (як на макеті)
     const sampleColors = {
       1: 'day-pink',
       3: 'day-yellow',
