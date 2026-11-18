@@ -809,6 +809,43 @@ main > section:first-child {
     height: auto;
   }
 }
+
+@media (min-width: 1320px) {
+
+  .services {
+    gap: 0;
+    flex-wrap: nowrap;
+  }
+
+  .service {
+    flex: 0 0 auto;
+    font-weight: 600;
+    letter-spacing: 0.13px;
+  }
+
+  .services .service:nth-child(1) {
+    width: 305px;
+    font-size: 24px;
+  }
+
+  .services .service:nth-child(2) {
+    width: 304px;
+    margin-left: 24px;
+    font-size: 22px;
+  }
+
+  .services .service:nth-child(3) {
+    width: 306px;
+    margin-left: 25px;
+  }
+
+  .services .service:nth-child(4) {
+    width: 293px;
+    margin-left: 23px;
+  }
+
+}
+
 /* Tablet (768px – 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .container {
@@ -1195,7 +1232,7 @@ main > section:first-child {
 
   .hero-bg img {
     position: absolute;
-    top: -130px;
+    top: -170px;
     left: 0;
     width: 100%;
     height: 100%;
